@@ -54,16 +54,17 @@ const Item = styled.div`
 
 type TypeProps = {
   title?: string;
-  links: Array<{name: string, icon?: string, bg?: string}>
+  links: Array<{name: string, icon?: string, bg?: string, key: string}>
+  onClick?: (key: string) => void;
 }
 
-const GroupButtons: FC<TypeProps> = ({ title, links }) => {
+const GroupButtons: FC<TypeProps> = ({ title, links, onClick }) => {
   return (
     <Wrapper>
       {title && <Title>{title}</Title>}
       <List>
         {links.map((i, index) => (
-          <Item key={index}>
+          <Item key={index} onClick={() => onClick && onClick(i.key)}>
             <div className={'group'}>
               {i.icon && (
                 <img

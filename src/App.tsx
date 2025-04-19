@@ -4,7 +4,7 @@ import Windows from './components/windows/Windows';
 import Widgets from './components/widgets/Widgets';
 import Dock from './components/dock/Dock';
 import { WINDOW_NAMES } from './constants';
-import SkillsContent from './components/contents/SkillsContent';
+import SkillsContent from './components/contents/skills-content/SkillsContent';
 import ExperienceContent from './components/contents/ExperienceContent';
 import EducationContent from './components/contents/EducationContent';
 import LicensesContent from './components/contents/LicensesContent';

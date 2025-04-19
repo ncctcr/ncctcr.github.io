@@ -12,7 +12,9 @@ const Wrapper = styled.div`
   img {
     width: 30px;
     height: 100%;
+    object-fit: contain;
     border-radius: 5px;
+    aspect-ratio: 1 / 1;
   }
 `
 
@@ -36,16 +38,18 @@ type TypeProps = {
   title: string;
   children: ReactNode
   icon?: string;
+  backgroundIcon?: boolean;
 }
 
 const Description: FC<TypeProps> = ({
   title,
   children,
   icon,
+  backgroundIcon = false,
 }) => {
   return (
     <Wrapper>
-      {icon && <img src={icon} alt={`${icon} icon`}/>}
+      {icon && <img src={icon} alt={`${icon} icon`} style={backgroundIcon ? {background: '#000'} : {}}/>}
       <Content>
         <Title><span>{title}</span></Title>
         <Body><span>{children}</span></Body>
