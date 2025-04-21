@@ -9,18 +9,61 @@ import ExperienceContent from './components/contents/ExperienceContent';
 import EducationContent from './components/contents/EducationContent';
 import LicensesContent from './components/contents/LicensesContent';
 import ContactsContent from './components/contents/ContactsContent';
-import { WindowsState } from './interfaces';
+import { TypeWindowSettings, TypeWindowStyles, WindowsState } from './interfaces';
 import StickerContent from './components/contents/StickerContent';
 import PuzzleGameContent from './components/contents/puzzle-game-content/PuzzleGameContent';
 
-const CONTENTS: {[key: string]: React.ReactNode} = {
-  skills: <SkillsContent />,
-  experience: <ExperienceContent />,
-  education: <EducationContent />,
-  licenses: <LicensesContent />,
-  contacts: <ContactsContent />,
-  sticker: <StickerContent />,
-  2048: <PuzzleGameContent />
+type TypeView = {
+  [key: string]: {
+    content: React.ReactNode
+    styles?: TypeWindowStyles,
+    settings?: TypeWindowSettings
+  }
+}
+
+const VIEWS: TypeView = {
+  skills: {
+    content: <SkillsContent />,
+    styles: {
+      header: {
+        height: '3rem'
+      }
+    }
+  },
+  experience: {
+    content: <ExperienceContent />
+  },
+  education: {
+    content: <EducationContent />
+  },
+  licenses: {
+    content: <LicensesContent />
+  },
+  contacts: {
+    content: <ContactsContent />
+  },
+  sticker: {
+    content: <StickerContent />,
+    styles: {
+      header: {
+        background: 'transparent',
+        hideResizeButton: true,
+        hideHideButton: true
+      },
+      body: {
+        background: '#fdf49c',
+        color: '#000000',
+        borderRadius: '0',
+      }
+    },
+  },
+  2048: {
+    content: <PuzzleGameContent />,
+    settings: {
+      minHeight: 671,
+      minWidth: 523
+    }
+  }
 }
 
 function App() {
@@ -37,19 +80,8 @@ function App() {
         zIndex: 1,
         key: 'sticker',
         type: 'sticker',
-        content: CONTENTS['sticker'],
-        styles: {
-          header: {
-            background: 'transparent',
-            hideResizeButton: true,
-            hideHideButton: true
-          },
-          body: {
-            background: '#fdf49c',
-            color: '#000000',
-            borderRadius: '0',
-          }
-        }
+        content: VIEWS['sticker'].content,
+        styles: VIEWS['sticker'].styles,
       }
     ]
   })
@@ -74,14 +106,15 @@ function App() {
             y: offset,
             width: 450,
             height: 600,
-            minWidth: 400,
-            minHeight: 400,
+            minWidth: VIEWS[key]?.settings?.minWidth || 450,
+            minHeight: VIEWS[key]?.settings?.minHeight || 600,
             id: newId,
             title: WINDOW_NAMES[key],
             zIndex: prev.highestZIndex + 1,
             key: key,
             type: 'window',
-            content: CONTENTS[key] ? CONTENTS[key] : '',
+            content: VIEWS[key] ? VIEWS[key].content : '',
+            styles: VIEWS[key]?.styles,
           },
         ]
       }));
@@ -90,9 +123,9 @@ function App() {
 
   return (
     <div>
-      <Windows data={state} onSetData={setState} />
       <Widgets />
-      <Dock onClick={handleOpen} />
+      <Windows data={state} onSetData={setState} />
+      <Dock data={state.windows} onClick={handleOpen} />
     </div>
   );
 }

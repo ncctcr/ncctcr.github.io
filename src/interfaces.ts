@@ -1,5 +1,14 @@
 import { CSSProperties, ReactNode } from 'react';
 
+export type TypeWindowSettings = {
+  x?: number,
+  y?: number,
+  width?: number,
+  height?: number,
+  minHeight?: number,
+  minWidth?: number,
+}
+
 export type TypeWindowStyles = {
   header?: CSSProperties & {
     hideCloseButton?: boolean;

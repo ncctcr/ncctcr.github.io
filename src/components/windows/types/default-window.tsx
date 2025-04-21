@@ -35,6 +35,7 @@ const Header = styled.div<{ isDragging: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 `
 
 const Body = styled.div`
@@ -44,10 +45,11 @@ const Body = styled.div`
 
 const Buttons = styled.div`
   position: absolute;
-  top: 0.8rem;
   left: 0.8rem;
+  height: 100%;
   z-index: 2;
   display: flex;
+  align-items: center;
   gap: 8px;
   
   button {

@@ -8,6 +8,7 @@ import ContactIcon from '../../assets/icons/dock/contact.png';
 import PuzzleIcon from '../../assets/icons/dock/2048.png';
 import { Fade, Tooltip } from '@mui/material';
 import { WINDOW_NAMES } from '../../constants';
+import { TypeWindow } from '../../interfaces';
 
 const Wrapper = styled.div`
 	position: absolute;
@@ -31,6 +32,7 @@ const Bar = styled.div`
 	border: 1px solid rgba(113, 113, 113, 0.44);
   
   .icon {
+    position: relative;
 		cursor: pointer;
 		padding: 0 8px;
   }
@@ -40,6 +42,17 @@ const Bar = styled.div`
 		height: 100%;
 		width: 100%;
 	}
+`
+
+const Dot = styled.div`
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.57);
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -4px;
 `
 
 const APPLICATIONS = [
@@ -76,10 +89,11 @@ const APPLICATIONS = [
 ]
 
 type TypeProps = {
+  data: TypeWindow[];
   onClick?: (key: string) => void;
 }
 
-const Dock: FC<TypeProps> = ({ onClick }) => {
+const Dock: FC<TypeProps> = ({ data, onClick }) => {
   return (
     <Wrapper>
       <Bar>
@@ -121,6 +135,9 @@ const Dock: FC<TypeProps> = ({ onClick }) => {
                 alt={i.name}
                 onClick={() => onClick && onClick(i.key)}
               />
+              {data.some((item) => item.key === i.key) && (
+                <Dot />
+              )}
             </div>
           </Tooltip>
         ))}

@@ -20,6 +20,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 30px;
   padding: 20px;
+	margin-bottom: 60px;
 `
 
 type TypeProps = {
