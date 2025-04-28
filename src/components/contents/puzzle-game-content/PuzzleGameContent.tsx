@@ -9,6 +9,7 @@ import GameProvider from './context/GameContext';
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
+  align-items: center;
 	gap: 30px;
 	padding: 20px;
 	margin-bottom: 40px;

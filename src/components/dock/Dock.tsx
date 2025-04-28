@@ -113,10 +113,6 @@ const APPLICATIONS: TypeApplication[] = [
     key: '2048',
     icon: PuzzleIcon,
     content: <PuzzleGameContent />,
-    settings: {
-      minHeight: 671,
-      minWidth: 523
-    }
   },
 ]
 

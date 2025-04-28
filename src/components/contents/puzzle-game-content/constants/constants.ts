@@ -3,7 +3,7 @@
  */
 export const containerWidthMobile = 288; // px
 
-export const containerWidthDesktop = 464; // px
+export const containerWidthDesktop = 348; // px
 
 export const tileCountPerDimension = 4;
 
