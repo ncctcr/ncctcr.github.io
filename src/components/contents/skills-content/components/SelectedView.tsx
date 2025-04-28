@@ -12,8 +12,16 @@ const Wrapper = styled.div`
   margin-bottom: 40px;
 `
 
+const Meme = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 500px;
+	border-radius: 8px;
+`
+
 type TypeProps = {
-  view: { name: string, icon: string, description: string, experience: string[] } | null;
+  view: { name: string, icon: string, description: string, experience: string[], meme?: string } | null;
 }
 
 const SelectedView: FC<TypeProps> = ({ view }) => {
@@ -29,6 +37,11 @@ const SelectedView: FC<TypeProps> = ({ view }) => {
           {view.experience.map((item) => (
             <Typography fontSize={13}>{item}</Typography>
           ))}
+        </Box>
+      </Block>
+      <Block>
+        <Box display={'flex'} justifyContent={'center'} p={2}>
+          <Meme src={view.meme} alt={view.name}/>
         </Box>
       </Block>
     </Wrapper>

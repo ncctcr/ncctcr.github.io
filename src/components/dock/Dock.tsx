@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import SkillIcon from '../../assets/icons/dock/skills.png';
 import ExperienceIcon from '../../assets/icons/dock/experience.png';
@@ -8,7 +8,14 @@ import ContactIcon from '../../assets/icons/dock/contact.png';
 import PuzzleIcon from '../../assets/icons/dock/2048.png';
 import { Fade, Tooltip } from '@mui/material';
 import { WINDOW_NAMES } from '../../constants';
-import { TypeWindow } from '../../interfaces';
+import { useWindows } from '../../contexts/WindowContext';
+import SkillsContent from '../contents/skills-content/SkillsContent';
+import ExperienceContent from '../contents/experience-content/ExperienceContent';
+import EducationContent from '../contents/EducationContent';
+import LicensesContent from '../contents/LicensesContent';
+import ContactsContent from '../contents/ContactsContent';
+import PuzzleGameContent from '../contents/puzzle-game-content/PuzzleGameContent';
+import { TypeWindowSettings, TypeWindowStyles } from '../../interfaces';
 
 const Wrapper = styled.div`
 	position: absolute;
@@ -24,7 +31,7 @@ const Bar = styled.div`
 	justify-content: center;
 	align-items: center;
 	border-radius: 20px;
-  padding: 10px 4px;
+  padding: 10px 4px 5px;
 	background: rgba(55, 55, 55, 0.29);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(10px);
@@ -41,6 +48,7 @@ const Bar = styled.div`
 		max-width: 50px;
 		height: 100%;
 		width: 100%;
+    aspect-ratio: 1 / 1;
 	}
 `
 
@@ -52,48 +60,84 @@ const Dot = styled.div`
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: -4px;
+	bottom: -2px;
 `
 
-const APPLICATIONS = [
+type TypeApplication = {
+  name: string;
+  key: string;
+  icon: string;
+  content: ReactNode;
+  styles?: TypeWindowStyles;
+  settings?: TypeWindowSettings;
+}
+
+const APPLICATIONS: TypeApplication[] = [
   {
     name: WINDOW_NAMES['skills'],
     key: 'skills',
-    icon: SkillIcon
+    icon: SkillIcon,
+    content: <SkillsContent />,
+    styles: {
+      header: {
+        height: '3rem'
+      }
+    }
   },
   {
     name: WINDOW_NAMES['experience'],
     key: 'experience',
-    icon: ExperienceIcon
+    icon: ExperienceIcon,
+    content: <ExperienceContent />,
   },
   {
     name: WINDOW_NAMES['education'],
     key: 'education',
-    icon: EducatitonIcon
+    icon: EducatitonIcon,
+    content: <EducationContent />,
   },
   {
     name: WINDOW_NAMES['licenses'],
     key: 'licenses',
-    icon: LicenceIcon
+    icon: LicenceIcon,
+    content: <LicensesContent />,
   },
   {
     name: WINDOW_NAMES['contacts'],
     key: 'contacts',
-    icon: ContactIcon
+    icon: ContactIcon,
+    content: <ContactsContent />,
   },
   {
     name: WINDOW_NAMES['2048'],
     key: '2048',
-    icon: PuzzleIcon
+    icon: PuzzleIcon,
+    content: <PuzzleGameContent />,
+    settings: {
+      minHeight: 671,
+      minWidth: 523
+    }
   },
 ]
 
-type TypeProps = {
-  data: TypeWindow[];
-  onClick?: (key: string) => void;
-}
+const Dock = () => {
+  const { state, createWindow, bringToFrontByKey } = useWindows();
 
-const Dock: FC<TypeProps> = ({ data, onClick }) => {
+  const handleOpen = (data: TypeApplication) => {
+    if (state.windows.some((i) => i.key === data.key)) {
+      bringToFrontByKey(data.key);
+    } else {
+      createWindow({
+        key: data.key,
+        title: data.name,
+        content: data.content,
+        styles: data.styles ? data.styles : {},
+        minWidth: data.settings?.minWidth || 450,
+        minHeight: data.settings?.minHeight || 600,
+      })
+    }
+  }
+
   return (
     <Wrapper>
       <Bar>
@@ -133,9 +177,9 @@ const Dock: FC<TypeProps> = ({ data, onClick }) => {
               <img
                 src={i.icon}
                 alt={i.name}
-                onClick={() => onClick && onClick(i.key)}
+                onClick={() => handleOpen(i)}
               />
-              {data.some((item) => item.key === i.key) && (
+              {state.windows.some((item) => item.key === i.key) && (
                 <Dot />
               )}
             </div>

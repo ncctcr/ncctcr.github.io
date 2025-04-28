@@ -9,14 +9,15 @@ import AxiosIcon from '../../../../assets/icons/axios.png';
 import ChartJsIcon from '../../../../assets/icons/chartjs.png';
 import I18nIcon from '../../../../assets/icons/i18n.png';
 import GitIcon from '../../../../assets/icons/git.png';
+import ReactMeme from '../../../../assets/images/memes/react.png';
 
-export const SKILL_VIEWS: { [key: string]: { name: string; icon: string; description: string; experience: string[] } } = {
+export const SKILL_VIEWS: { [key: string]: { name: string; icon: string; description: string; experience: string[], meme?: string } } = {
   react: {
     name: "React",
     icon: ReactIcon,
     description: "React is a JavaScript library that helps developers build user interfaces for web applications. It simplifies the process of creating interactive and dynamic UIs by breaking down the interface into reusable components.",
     experience: [
-      "As a frontend developer with 4 years of experience, I have a strong proficiency in React along with a solid understanding of Redux, Hooks, and functional programming paradigms.",
+      "As a frontend developer, I have a strong proficiency in React along with a solid understanding of Redux, Hooks, and functional programming paradigms.",
       "Throughout my career, I have leveraged these technologies to create dynamic and interactive user interfaces for various web applications.",
       "I am adept at utilizing React component-based architecture to create reusable and maintainable code, promoting scalability and efficiency in development workflows.",
       "Moreover, my familiarity with Redux enables me to effectively manage application state and orchestrate data flow, ensuring a predictable and stable user experience.",
@@ -24,14 +25,15 @@ export const SKILL_VIEWS: { [key: string]: { name: string; icon: string; descrip
       "In addition, my expertise extends to utilizing React Hooks to manage component state and lifecycle in a functional and concise manner.",
       "Leveraging the power of functional programming concepts in JavaScript, I strive to write clean, declarative, and composable code, enhancing readability and maintainability across projects.",
       "Overall, my extensive experience with React, Redux, Hooks, and functional programming has equipped me with the skills and knowledge necessary to tackle complex frontend challenges and deliver high-quality solutions that meet both user requirements and business objectives."
-    ]
+    ],
+    meme: ReactMeme,
   },
   html: {
     name: "HTML",
     icon: HtmlIcon,
     description: "HTML is the backbone of web development, and I have a deep understanding of its syntax, structure, and best practices.",
     experience: [
-      "As a front-end developer with 4 years of experience, I have extensively worked with HTML to create and build user interfaces for various websites and web applications.",
+      "As a frontend developer, I have extensively worked with HTML to create and build user interfaces for various websites and web applications.",
       "Throughout my career, I have utilized HTML to create semantic and accessible web pages. I am proficient in using different HTML elements such as headings, paragraphs, lists, tables, forms, and more to organize content and present information in a clear and well-structured manner.",
       "Working with HTML5, I have implemented the latest features and functionalities, including the integration of multimedia elements like audio and video, as well as the use of semantic tags to improve search engine optimization and enhance the overall user experience.",
       "In my projects, I have collaborated closely with UI/UX designers and back-end developers to ensure seamless integration and functionality. I am well-versed in using HTML with CSS and JavaScript to implement responsive designs and create interactive and dynamic web pages.",

@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme';
+import { WindowsProvider } from './contexts/WindowContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,8 +13,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <App />
+      <WindowsProvider>
+        <CssBaseline/>
+        <App />
+      </WindowsProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Description from '../shared/Description';
 import LicenceIcon from '../../assets/icons/dock/licence.png';
@@ -7,6 +7,7 @@ import LearningImg from '../../assets/images/certificates/learning-typescript.pn
 import ReactImg from '../../assets/images/certificates/react-using-typescript.png';
 import { shortenText } from '../../functions';
 import { Box } from '@mui/material';
+import { useWindows } from '../../contexts/WindowContext';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -16,13 +17,13 @@ const Wrapper = styled.div`
 	margin-bottom: 40px;
 `
 
-const Item = styled.div<{selected: boolean}>`
+const Item = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   div {
-		background: ${(props) => props.selected ? '#ffffff1c' : 'unset'};
     width: 100%;
     display: flex;
     justify-content: center;
@@ -41,7 +42,6 @@ const Item = styled.div<{selected: boolean}>`
     font-size: 12px;
     padding: 5px;
 		border-radius: 4px;
-		background: ${(props) => props.selected ? '#025ad2' : 'unset'};
   }
 `
 
@@ -61,11 +61,26 @@ const IMAGES = [
 ]
 
 const LicensesContent = () => {
-  const [selected, setSelected] = useState<null | number>(null)
+  const {state, createWindow, bringToFrontByKey} = useWindows();
 
-  const handleSelect = (index: number) => {
-    setSelected(index);
+  const handleOpen = (item: any) => {
+    if (state.windows.some((i) => i.key === item.name)) {
+      bringToFrontByKey(item.name);
+    } else {
+      createWindow({
+        key: item.name,
+        title: item.name,
+        content: <img src={item.src} alt={item.name} style={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'contain'
+        }}/>,
+        height: 550,
+        width: 700
+      })
+    }
   }
+
 
   return (
     <Wrapper>
@@ -74,11 +89,7 @@ const LicensesContent = () => {
       </Description>
       <Box display={'flex'} gap={2}>
         {IMAGES.map((image, index) => (
-          <Item
-            key={index}
-            onClick={() => handleSelect(index)}
-            selected={selected === index}
-          >
+          <Item key={index} onClick={() => handleOpen(image)}>
             <div>
               <img src={image.src} alt="Hackathon"/>
             </div>

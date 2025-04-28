@@ -19,18 +19,17 @@ export type TypeWindowStyles = {
 }
 
 export type TypeWindow = {
-  x: number,
-  y: number,
-  width: number,
-  height: number,
+  x?: number,
+  y?: number,
+  width?: number,
+  height?: number,
   minHeight?: number,
   minWidth?: number,
-  id: number,
+  id?: number,
   title: string,
   content: ReactNode
   key: string;
-  zIndex: number;
-  type: 'window' | 'sticker';
+  zIndex?: number;
   styles?: TypeWindowStyles;
 }
 
