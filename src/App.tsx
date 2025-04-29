@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import Windows from './components/windows/Windows';
-import Widgets from './components/widgets/Widgets';
-import Dock from './components/dock/Dock';
+import { useMediaQuery, useTheme } from '@mui/material';
+import MobileView from './components/views/MobileView';
+import DesktopView from './components/views/DesktopView';
 
 function App() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
+
   return (
     <div>
-      <Widgets />
-      <Windows />
-      <Dock />
+      {isMobile ? <MobileView /> : <DesktopView />}
     </div>
   );
 }

@@ -4,8 +4,6 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
 	width: 100%;
   height: 100%;
-	max-height: 160px;
-	max-width: 160px;
 	background: #2e2e2e;
 	backdrop-filter: blur(10px);
 	border-radius: 17px;
@@ -15,6 +13,7 @@ const Wrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+  aspect-ratio: 1 / 1;
 `;
 
 const Clock = styled.div`

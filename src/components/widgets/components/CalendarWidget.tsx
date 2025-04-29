@@ -4,8 +4,6 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-	max-height: 160px;
-	max-width: 160px;
 	background: #2e2e2e;
 	backdrop-filter: blur(10px);
 	border-radius: 17px;
@@ -14,7 +12,8 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-  color: #d4d4d4
+  color: #d4d4d4;
+  aspect-ratio: 1 / 1;
 `;
 
 const CalendarHeader = styled.div`
@@ -37,7 +36,6 @@ const MonthTitle = styled.h2`
   text-transform: uppercase;
   color: #fc4134;
 `;
-
 
 const DayLabels = styled.div`
 	display: grid;
