@@ -115,7 +115,9 @@ const APPLICATIONS: TypeApplication[] = [
     content: <PuzzleGameContent />,
     settings: {
       width: 400,
-      minWidth: 400
+      minWidth: 400,
+      height: 650,
+      minHeight: 650
     }
   },
 ]
