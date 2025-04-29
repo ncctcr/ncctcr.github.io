@@ -22,7 +22,6 @@ const VideoWidget = () => {
         src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1"
         title="lofi hip hop radio"
         frameBorder="0"
-        allow="autoplay; encrypted-media"
         allowFullScreen
         style={{
           borderRadius: 12,
