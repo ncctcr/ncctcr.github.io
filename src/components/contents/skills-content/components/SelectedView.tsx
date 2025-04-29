@@ -39,11 +39,13 @@ const SelectedView: FC<TypeProps> = ({ view }) => {
           ))}
         </Box>
       </Block>
-      <Block>
-        <Box display={'flex'} justifyContent={'center'} p={2}>
-          <Meme src={view.meme} alt={view.name}/>
-        </Box>
-      </Block>
+      {view.meme && (
+        <Block>
+          <Box display={'flex'} justifyContent={'center'} p={2}>
+            <Meme src={view.meme} alt={view.name}/>
+          </Box>
+        </Block>
+      )}
     </Wrapper>
   );
 };
