@@ -1,50 +1,32 @@
 .board {
 	position: relative;
-	width: calc(var(--pixel-size) * 8 * 4 + var(--pixel-size) * 5);
+	width: 100%;
 }
 
 .grid {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	gap: var(--pixel-size);
+	padding: var(--pixel-size);
 	background: var(--secondary-background);
-	border: calc(var(--pixel-size) * 0.5) solid var(--secondary-background);
-	border-radius: calc(var(--pixel-size) * 0.75);
+	border-radius: var(--pixel-size);
 }
 
 .cell {
-	width: calc(var(--pixel-size) * 8);
-	height: calc(var(--pixel-size) * 8);
-	margin: calc(var(--pixel-size) * 0.5);
-	border-radius: calc(var(--pixel-size) * 0.5);
+	aspect-ratio: 1;
+	border-radius: var(--pixel-size);
 	background: var(--cell-background);
 }
+
 
 .tiles {
 	position: absolute;
 	z-index: 2;
-	margin: calc(var(--pixel-size) * 0.5);
 	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
-}
-
-@media (min-width: 512px) {
-	.board {
-		width: calc(var(--pixel-size) * 12.5 * 4 + var(--pixel-size) * 10);
-	}
-
-	.grid {
-		border: calc(var(--pixel-size) * 1) solid var(--secondary-background);
-	}
-
-	.cell {
-		width: calc(var(--pixel-size) * 12.5);
-		height: calc(var(--pixel-size) * 12.5);
-		margin: calc(var(--pixel-size) * 1);
-	}
-
-	.tiles {
-		margin: calc(var(--pixel-size) * 1);
-	}
+	margin-bottom: var(--pixel-size);
+	margin-right: var(--pixel-size);
 }

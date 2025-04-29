@@ -3,6 +3,7 @@ import { GameContext } from '../context/GameContext';
 import Tile from './Tile';
 import Splash from './Splash';
 import styles from '../styles/board.module.css';
+import MobileSwiper from './MobileSwiper';
 
 const Board = () => {
   const { getTiles, moveTiles, startGame, status } = useContext(GameContext);
@@ -83,12 +84,14 @@ const Board = () => {
   }, [handleKeyDown]);
 
   return (
-    <div className={styles.board}>
-      {status === "won" && <Splash heading="You won!" type="won" />}
-      {status === "lost" && <Splash heading="You lost!" />}
-      <div className={styles.tiles}>{renderTiles()}</div>
-      <div className={styles.grid}>{renderGrid()}</div>
-    </div>
+    <MobileSwiper onSwipe={handleSwipe}>
+      <div className={styles.board}>
+        {status === "won" && <Splash heading="You won!" type="won" />}
+        {status === "lost" && <Splash heading="You lost!" />}
+        <div className={styles.tiles}>{renderTiles()}</div>
+        <div className={styles.grid}>{renderGrid()}</div>
+      </div>
+    </MobileSwiper>
   );
 }
 

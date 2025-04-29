@@ -14,14 +14,12 @@ type TileProps = {
 }
 
 export default function Tile({ position, value }: TileProps) {
-  const containerWidth = true ? containerWidthDesktop : containerWidthMobile;
-
   const [scale, setScale] = useState(1);
   const previousValue = usePreviousProps<number>(value);
   const hasChanged = previousValue !== value;
 
-  const positionToPixels = (position: number) =>
-    (position / tileCountPerDimension) * containerWidth;
+  const positionToPercent = (position: number) =>
+    `calc(${(position / tileCountPerDimension) * 100}%`;
 
   useEffect(() => {
     if (hasChanged) {
@@ -31,8 +29,8 @@ export default function Tile({ position, value }: TileProps) {
   }, [hasChanged]);
 
   const style = {
-    left: positionToPixels(position[0]),
-    top: positionToPixels(position[1]),
+    left: positionToPercent(position[0]),
+    top: positionToPercent(position[1]),
     transform: `scale(${scale})`,
     zIndex: value,
   };
