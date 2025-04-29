@@ -79,9 +79,9 @@ const MainView = (props: {onClick: (view: number) => void}) => (
       <Grid size={6}>
         <CalendarWidget />
       </Grid>
-      <Grid size={12}>
-        <ContactsWidget />
-      </Grid>
+      {/*<Grid size={12}>*/}
+      {/*  <ContactsWidget />*/}
+      {/*</Grid>*/}
     </Grid>
   </Box>
 )
