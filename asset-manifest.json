@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2eb8a2a5.css",
+    "main.js": "/static/js/main.20f3b301.js",
+    "static/js/453.7d32d73e.chunk.js": "/static/js/453.7d32d73e.chunk.js",
+    "static/media/bg-1.jpeg": "/static/media/bg-1.3a73dd525424eec04eaa.jpeg",
+    "static/media/covid-challenge-hackathon.png": "/static/media/covid-challenge-hackathon.c26fa5d265195efe6016.png",
+    "static/media/react.png": "/static/media/react.8a6fc0a24a800d1e0f4a.png",
+    "static/media/skills.png": "/static/media/skills.94109eaa62b7880cd5c4.png",
+    "static/media/education.png": "/static/media/education.5ce435c58955fa6a1baa.png",
+    "static/media/contact.png": "/static/media/contact.7eec61c699e547a9c434.png",
+    "static/media/react-using-typescript.png": "/static/media/react-using-typescript.af0023861f264992cee3.png",
+    "static/media/licence.png": "/static/media/licence.7eed57b06a27b3ec295c.png",
+    "static/media/experience.png": "/static/media/experience.273bb7257850f3cbbdeb.png",
+    "static/media/learning-typescript.png": "/static/media/learning-typescript.0898ad94aafaf8362e31.png",
+    "static/media/2048.png": "/static/media/2048.02133015a722ce520557.png",
+    "static/media/chartjs.png": "/static/media/chartjs.4a930fbc8ffc21fbeb8c.png",
+    "static/media/axios.png": "/static/media/axios.7c5e0cbd3a9f055b4c08.png",
+    "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
+    "static/media/haccess.png": "/static/media/haccess.74dc7c794870f77abe00.png",
+    "static/media/html.png": "/static/media/html.ff3cf75e3b7cbb4ea77c.png",
+    "static/media/i18n.png": "/static/media/i18n.1c54f6d7499be9f011fc.png",
+    "static/media/ts.png": "/static/media/ts.af108db04a54d784da9b.png",
+    "static/media/js.png": "/static/media/js.3dfb665e058d08c99f28.png",
+    "static/media/redux.svg": "/static/media/redux.59f428ebf1c8b3a3fcec9ee28b57c9da.svg",
+    "index.html": "/index.html",
+    "static/media/close.svg": "/static/media/close.1d2aeb4cd638d64b9a1846b630e7cdfc.svg",
+    "static/media/hide.svg": "/static/media/hide.031ae33fb154ac7b17135946955b9d84.svg",
+    "static/media/resize.svg": "/static/media/resize.336c41f63adfa4399a297f91a130001b.svg",
+    "main.2eb8a2a5.css.map": "/static/css/main.2eb8a2a5.css.map",
+    "main.20f3b301.js.map": "/static/js/main.20f3b301.js.map",
+    "453.7d32d73e.chunk.js.map": "/static/js/453.7d32d73e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2eb8a2a5.css",
+    "static/js/main.20f3b301.js"
+  ]
+}
