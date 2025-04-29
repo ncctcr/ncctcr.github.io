@@ -1,4 +1,4 @@
-import { JSX, useCallback, useContext, useEffect, useRef } from "react";
+import React, { JSX, useCallback, useContext, useEffect, useRef } from "react";
 import { GameContext } from '../context/GameContext';
 import Tile from './Tile';
 import Splash from './Splash';

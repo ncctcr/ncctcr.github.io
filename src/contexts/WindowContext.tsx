@@ -2,6 +2,35 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { TypeWindow, WindowsState } from '../interfaces';
 import StickerContent from '../components/contents/StickerContent';
 
+const INIT_STATE = {
+  highestZIndex: 1,
+  windows: [
+    {
+      id: Date.now(),
+      x: 20,
+      y: 20,
+      width: 300,
+      height: 240,
+      title: '',
+      zIndex: 1,
+      key: 'sticker',
+      content: <StickerContent />,
+      styles: {
+        header: {
+          background: 'transparent',
+          hideResizeButton: true,
+          hideHideButton: true
+        },
+        body: {
+          background: '#fdf49c',
+          color: '#000000',
+          borderRadius: '0',
+        }
+      },
+    }
+  ]
+}
+
 interface WindowsContextType {
   state: WindowsState;
   setState: React.Dispatch<React.SetStateAction<WindowsState>>;
@@ -17,34 +46,7 @@ interface WindowsContextType {
 const WindowsContext = createContext<WindowsContextType | undefined>(undefined);
 
 export const WindowsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [state, setState] = useState<WindowsState>({
-    highestZIndex: 1,
-    windows: [
-      {
-        id: Date.now(),
-        x: 20,
-        y: 20,
-        width: 300,
-        height: 240,
-        title: '',
-        zIndex: 1,
-        key: 'sticker',
-        content: <StickerContent />,
-        styles: {
-          header: {
-            background: 'transparent',
-            hideResizeButton: true,
-            hideHideButton: true
-          },
-          body: {
-            background: '#fdf49c',
-            color: '#000000',
-            borderRadius: '0',
-          }
-        },
-      }
-    ]
-  });
+  const [state, setState] = useState<WindowsState>(INIT_STATE);
 
   const createWindow = (window: TypeWindow) => {
     const offset = state.windows.length * 20 + 100;

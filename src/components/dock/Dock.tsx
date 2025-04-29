@@ -113,6 +113,10 @@ const APPLICATIONS: TypeApplication[] = [
     key: '2048',
     icon: PuzzleIcon,
     content: <PuzzleGameContent />,
+    settings: {
+      width: 400,
+      minWidth: 400
+    }
   },
 ]
 
@@ -128,6 +132,8 @@ const Dock = () => {
         title: data.name,
         content: data.content,
         styles: data.styles ? data.styles : {},
+        width: data.settings?.width || 450,
+        height: data.settings?.height || 600,
         minWidth: data.settings?.minWidth || 450,
         minHeight: data.settings?.minHeight || 600,
       })
