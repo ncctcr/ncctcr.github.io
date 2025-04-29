@@ -16,6 +16,7 @@ import EducationContent from '../contents/EducationContent';
 import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
 import PuzzleGameContent from '../contents/puzzle-game-content/PuzzleGameContent';
+import ContactsWidget from '../widgets/components/ContactsWidget';
 
 const Icon = styled.img`
   width: 100%;
@@ -52,7 +53,7 @@ const MainView = (props: {onClick: (view: number) => void}) => (
       <Grid size={6}>
         <Grid container spacing={SPACING}>
           <Grid size={6} onClick={() => props.onClick(1)}>
-            <Application name={'Skill'} icon={SkillIcon}/>
+            <Application name={'Skills'} icon={SkillIcon}/>
           </Grid>
           <Grid size={6} onClick={() => props.onClick(2)}>
             <Application name={'Experience'} icon={ExperienceIcon}/>
@@ -77,6 +78,9 @@ const MainView = (props: {onClick: (view: number) => void}) => (
       </Grid>
       <Grid size={6}>
         <CalendarWidget />
+      </Grid>
+      <Grid size={12}>
+        <ContactsWidget />
       </Grid>
     </Grid>
   </Box>
