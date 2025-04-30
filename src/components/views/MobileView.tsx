@@ -9,14 +9,16 @@ import EducatitonIcon from '../../assets/icons/dock/education.png';
 import LicenceIcon from '../../assets/icons/dock/licence.png';
 import ContactIcon from '../../assets/icons/dock/contact.png';
 import PuzzleIcon from '../../assets/icons/dock/2048.png';
+import BlackjackIcon from '../../assets/icons/dock/blackjack.png';
 import SkillsContent from '../contents/skills-content/SkillsContent';
 import SelectedView from './SelectedView';
 import ExperienceContent from '../contents/experience-content/ExperienceContent';
 import EducationContent from '../contents/EducationContent';
 import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
-import PuzzleGameContent from '../contents/puzzle-game-content/PuzzleGameContent';
+import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import ContactsWidget from '../widgets/components/ContactsWidget';
+import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
 
 const Icon = styled.img`
   width: 100%;
@@ -74,6 +76,9 @@ const MainView = (props: {onClick: (view: number) => void}) => (
           <Grid size={6} onClick={() => props.onClick(6)}>
             <Application name={'2048'} icon={PuzzleIcon}/>
           </Grid>
+          <Grid size={6} onClick={() => props.onClick(7)}>
+            <Application name={'Blackjack'} icon={BlackjackIcon}/>
+          </Grid>
         </Grid>
       </Grid>
       <Grid size={6}>
@@ -96,7 +101,8 @@ const MobileView = () => {
     3: <SelectedView onBack={() => setView(0)}><EducationContent/></SelectedView>,
     4: <SelectedView onBack={() => setView(0)}><LicensesContent/></SelectedView>,
     5: <SelectedView onBack={() => setView(0)}><ContactsContent/></SelectedView>,
-    6: <SelectedView onBack={() => setView(0)}><PuzzleGameContent/></SelectedView>,
+    6: <SelectedView onBack={() => setView(0)}><PuzzleContent/></SelectedView>,
+    7: <SelectedView onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
   };
 
   return (

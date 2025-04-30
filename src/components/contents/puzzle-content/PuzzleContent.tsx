@@ -37,7 +37,7 @@ const Info = styled(Box)`
 `
 
 
-const PuzzleGameContent = () => {
+const PuzzleContent = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
   const helperText = isMobile ? 'Use swipes to move cells around' : 'Use the arrow keys for move cells';
@@ -61,4 +61,4 @@ const PuzzleGameContent = () => {
   );
 };
 
-export default PuzzleGameContent;
+export default PuzzleContent;

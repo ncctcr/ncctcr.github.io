@@ -14,7 +14,7 @@ import ExperienceContent from '../contents/experience-content/ExperienceContent'
 import EducationContent from '../contents/EducationContent';
 import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
-import PuzzleGameContent from '../contents/puzzle-game-content/PuzzleGameContent';
+import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import { TypeWindowSettings, TypeWindowStyles } from '../../interfaces';
 
 const Wrapper = styled.div`
@@ -112,7 +112,7 @@ const APPLICATIONS: TypeApplication[] = [
     name: WINDOW_NAMES['2048'],
     key: '2048',
     icon: PuzzleIcon,
-    content: <PuzzleGameContent />,
+    content: <PuzzleContent />,
     settings: {
       width: 400,
       minWidth: 400,
