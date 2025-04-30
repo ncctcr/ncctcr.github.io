@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 0 15px 5px 15px;
 `
 
 const Content = styled.div`

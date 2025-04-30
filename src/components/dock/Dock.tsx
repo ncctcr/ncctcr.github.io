@@ -7,6 +7,7 @@ import LicenceIcon from '../../assets/icons/dock/licence.png';
 import ContactIcon from '../../assets/icons/dock/contact.png';
 import PuzzleIcon from '../../assets/icons/dock/2048.png';
 import BlackjackIcon from '../../assets/icons/dock/blackjack.png';
+import AboutMeIcon from '../../assets/icons/dock/about-me.png';
 import { Fade, Tooltip } from '@mui/material';
 import { WINDOW_NAMES } from '../../constants';
 import { useWindows } from '../../contexts/WindowContext';
@@ -18,6 +19,7 @@ import ContactsContent from '../contents/ContactsContent';
 import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import { TypeWindowSettings, TypeWindowStyles } from '../../interfaces';
 import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
+import AboutMeContent from '../contents/AboutMeContent';
 
 const Wrapper = styled.div`
 	position: absolute;
@@ -109,6 +111,17 @@ const APPLICATIONS: TypeApplication[] = [
     key: 'contacts',
     icon: ContactIcon,
     content: <ContactsContent />,
+  },
+  {
+    name: WINDOW_NAMES['about_me'],
+    key: 'about_me',
+    icon: AboutMeIcon,
+    content: <AboutMeContent />,
+    styles: {
+      header: {
+        background: 'transparent'
+      }
+    }
   },
   {
     name: WINDOW_NAMES['2048'],

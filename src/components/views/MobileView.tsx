@@ -10,6 +10,7 @@ import LicenceIcon from '../../assets/icons/dock/licence.png';
 import ContactIcon from '../../assets/icons/dock/contact.png';
 import PuzzleIcon from '../../assets/icons/dock/2048.png';
 import BlackjackIcon from '../../assets/icons/dock/blackjack.png';
+import AboutMeIcon from '../../assets/icons/dock/about-me.png';
 import SkillsContent from '../contents/skills-content/SkillsContent';
 import SelectedView from './SelectedView';
 import ExperienceContent from '../contents/experience-content/ExperienceContent';
@@ -18,6 +19,7 @@ import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
 import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
+import AboutMeContent from '../contents/AboutMeContent';
 
 const Icon = styled.img`
   width: 100%;
@@ -72,6 +74,9 @@ const MainView = (props: {onClick: (view: number) => void}) => (
           <Grid size={6} onClick={() => props.onClick(5)}>
             <Application name={'Contacts'} icon={ContactIcon}/>
           </Grid>
+          <Grid size={6} onClick={() => props.onClick(8)}>
+            <Application name={'About Me'} icon={AboutMeIcon}/>
+          </Grid>
           <Grid size={6} onClick={() => props.onClick(6)}>
             <Application name={'2048'} icon={PuzzleIcon}/>
           </Grid>
@@ -99,6 +104,7 @@ const MobileView = () => {
     5: <SelectedView onBack={() => setView(0)} title={'Contacts'}><ContactsContent/></SelectedView>,
     6: <SelectedView styles={{body: {background: '#cebda6'}}} onBack={() => setView(0)}><PuzzleContent/></SelectedView>,
     7: <SelectedView styles={{body: {background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)'}}} onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
+    8: <SelectedView onBack={() => setView(0)}><AboutMeContent/></SelectedView>,
   };
 
   return (
