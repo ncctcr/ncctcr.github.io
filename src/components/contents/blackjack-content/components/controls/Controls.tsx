@@ -56,7 +56,6 @@ const Controls: React.FC<ControlsProps> = ({ balance, gameState, buttonState, be
             value={amount}
             onChange={amountChange}
             fullWidth
-            autoFocus
           />
           <Button
             variant={'contained'}
