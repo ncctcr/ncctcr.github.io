@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Controls.module.css';
+import { Button } from '@mui/material';
 
 type ControlsProps = {
   balance: number,
@@ -50,16 +51,16 @@ const Controls: React.FC<ControlsProps> = ({ balance, gameState, buttonState, be
             <h4>Amount:</h4>
             <input autoFocus type='number' value={amount} onChange={amountChange} className={inputStyle} />
           </div>
-          <button onClick={() => onBetClick()} className={styles.button}>Bet</button>
+          <Button variant={'contained'} onClick={() => onBetClick()} className={styles.button}>Bet</Button>
         </div>
       );
     }
     else {
       return (
         <div className={styles.controlsContainer}>
-          <button onClick={() => hitEvent()} disabled={buttonState.hitDisabled} className={styles.button}>Hit</button>
-          <button onClick={() => standEvent()} disabled={buttonState.standDisabled} className={styles.button}>Stand</button>
-          <button onClick={() => resetEvent()} disabled={buttonState.resetDisabled} className={styles.button}>Reset</button>
+          <Button variant={'contained'} onClick={() => hitEvent()} disabled={buttonState.hitDisabled} className={styles.button}>Hit</Button>
+          <Button variant={'contained'} onClick={() => standEvent()} disabled={buttonState.standDisabled} className={styles.button}>Stand</Button>
+          <Button variant={'contained'} onClick={() => resetEvent()} disabled={buttonState.resetDisabled} className={styles.button}>Reset</Button>
         </div>
       );
     }

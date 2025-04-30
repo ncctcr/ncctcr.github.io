@@ -3,6 +3,7 @@ import jsonData from './deck.json';
 import Status from './components/status/Status';
 import Controls from './components/controls/Controls';
 import Hand from './components/hand/Hand';
+import { Box } from '@mui/material';
 
 const BlackjackContent: React.FC = () => {
   enum GameState {
@@ -260,7 +261,7 @@ const BlackjackContent: React.FC = () => {
   }
 
   return (
-    <>
+    <Box display={'flex'} flexDirection={'column'} gap={2} p={2}>
       <Status message={message} balance={balance} />
       <Controls
         balance={balance}
@@ -273,7 +274,7 @@ const BlackjackContent: React.FC = () => {
       />
       <Hand title={`Dealer's Hand (${dealerScore})`} cards={dealerCards} />
       <Hand title={`Your Hand (${userScore})`} cards={userCards} />
-    </>
+    </Box>
   );
 }
 

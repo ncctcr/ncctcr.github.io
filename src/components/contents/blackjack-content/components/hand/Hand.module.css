@@ -3,7 +3,6 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	margin: 0.5em;
 }
 
 .cardContainer {
@@ -13,11 +12,6 @@
 }
 
 .title {
+	font-size: 110%;
 	text-align: center;
-}
-
-@media screen and (max-width: 600px) {
-	.title {
-		font-size: 150%;
-	}
 }
