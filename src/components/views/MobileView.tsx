@@ -102,7 +102,7 @@ const MobileView = () => {
     4: <SelectedView onBack={() => setView(0)}><LicensesContent/></SelectedView>,
     5: <SelectedView onBack={() => setView(0)}><ContactsContent/></SelectedView>,
     6: <SelectedView onBack={() => setView(0)}><PuzzleContent/></SelectedView>,
-    7: <SelectedView onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
+    7: <SelectedView styles={{body: {background: '#02571d'}}} onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
   };
 
   return (

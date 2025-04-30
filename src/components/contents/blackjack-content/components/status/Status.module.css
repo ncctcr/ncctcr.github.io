@@ -8,9 +8,8 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	background: black;
 	border-radius: 15px;
-	box-shadow: 0 1px 10px rgb(0, 0, 0);
+	border: 1px solid #ffffff45;
 }
 
 .balance {
@@ -18,9 +17,8 @@
 	align-items: center;
 	justify-content: center;
 	width: 30%;
-	background: black;
 	border-radius: 15px;
-	box-shadow: 0 1px 10px rgb(0, 0, 0);
+	border: 1px solid #ffffff45;
 }
 
 .value {

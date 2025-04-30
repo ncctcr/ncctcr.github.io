@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { CSSProperties, FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Button } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -28,12 +28,16 @@ const Body = styled.div`
 type TypeProps = {
   onBack: () => void;
   children: ReactNode;
+  styles?: {
+    body?: CSSProperties;
+    header?: CSSProperties;
+  }
 }
 
-const SelectedView: FC<TypeProps> = ({ onBack, children }) => {
+const SelectedView: FC<TypeProps> = ({ onBack, children, styles}) => {
   return (
-    <Wrapper>
-      <Header>
+    <Wrapper style={styles?.body}>
+      <Header style={styles?.header}>
         <Button onClick={onBack}><ClearIcon/></Button>
       </Header>
       <Body>
