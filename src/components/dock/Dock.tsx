@@ -6,6 +6,7 @@ import EducatitonIcon from '../../assets/icons/dock/education.png';
 import LicenceIcon from '../../assets/icons/dock/licence.png';
 import ContactIcon from '../../assets/icons/dock/contact.png';
 import PuzzleIcon from '../../assets/icons/dock/2048.png';
+import BlackjackIcon from '../../assets/icons/dock/blackjack.png';
 import { Fade, Tooltip } from '@mui/material';
 import { WINDOW_NAMES } from '../../constants';
 import { useWindows } from '../../contexts/WindowContext';
@@ -16,6 +17,7 @@ import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
 import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import { TypeWindowSettings, TypeWindowStyles } from '../../interfaces';
+import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
 
 const Wrapper = styled.div`
 	position: absolute;
@@ -119,6 +121,12 @@ const APPLICATIONS: TypeApplication[] = [
       height: 650,
       minHeight: 650
     }
+  },
+  {
+    name: WINDOW_NAMES['blackjack'],
+    key: 'blackjack',
+    icon: BlackjackIcon,
+    content: <BlackjackContent />,
   },
 ]
 

@@ -5,6 +5,7 @@ export const WINDOW_NAMES: {[key: string]: string} = {
   licenses: 'Licenses & Certification',
   contacts: 'Contacts',
   2048: '2048',
+  blackjack: 'Blackjack',
 }
 
 export const TECHNOLOGIES: {name: string, key: string}[] = [
