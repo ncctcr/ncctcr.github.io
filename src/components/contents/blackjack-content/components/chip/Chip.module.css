@@ -1,0 +1,15 @@
+
+.chip {
+	height: 75px;
+	width: 75px;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	span {
+		font-weight: 600;
+		color: #000
+	}
+}

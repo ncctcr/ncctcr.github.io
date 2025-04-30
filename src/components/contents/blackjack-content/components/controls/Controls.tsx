@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Controls.module.css';
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import PanToolIcon from '@mui/icons-material/PanTool';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { Chip } from '../chip/Chip';
 
 type ControlsProps = {
   balance: number,
@@ -15,56 +16,50 @@ type ControlsProps = {
   resetEvent: any
 };
 
+const CHIP_VALUES = [1, 5, 10, 20, 50] as const;
+
 const Controls: React.FC<ControlsProps> = ({ balance, gameState, buttonState, betEvent, hitEvent, standEvent, resetEvent }) => {
-  const [amount, setAmount] = useState(10);
-  const [inputStyle, setInputStyle] = useState(styles.input);
-
-  useEffect(() => {
-    validation();
-  }, [amount, balance]);
-
-  const validation = () => {
-    if (amount > balance) {
-      setInputStyle(styles.inputError);
-      return false;
-    }
-    if (amount < 0.01) {
-      setInputStyle(styles.inputError);
-      return false;
-    }
-    setInputStyle(styles.input);
-    return true;
-  }
-
-  const amountChange = (e: any) => {
-    setAmount(e.target.value);
-  }
+  const [chips, setChips] = useState([10]);
+  const total = chips.reduce((a, b) => a + b, 0);
 
   const onBetClick = () => {
-    if (validation()) {
-      betEvent(Math.round(amount * 100) / 100);
+    if (total && total < balance) {
+      betEvent(total);
     }
   }
 
   const getControls = () => {
     if (gameState === 0) {
       return (
-        <div className={styles.controlsContainer}>
-          <TextField
-            label="Amount"
-            variant="outlined"
-            value={amount}
-            onChange={amountChange}
-            fullWidth
-          />
+        <Box display={'flex'} flexDirection={'column'} justifyContent={'space-around'} alignItems={'center'} gap={2} height={'100%'}>
+          <Box display={'flex'} flexDirection={'column'} textAlign={'center'} onClick={() => setChips([0])} gap={1} width={'100%'}>
+            <Typography fontWeight={600} variant={'h4'}>Your bet</Typography>
+            <Typography variant={'h4'}>${total}</Typography>
+          </Box>
+
+          <Box display={'flex'} justifyContent={'center'} flexWrap={'wrap'} gap={1} width={'70%'}>
+            {CHIP_VALUES.map(value => (
+              <Chip
+                key={value}
+                value={value}
+                onCLick={(value) => setChips([...chips, value])}
+                disable={balance < total + value}
+              />
+            ))}
+          </Box>
+
           <Button
             variant={'contained'}
             onClick={() => onBetClick()}
-            className={styles.button}
+            size={'large'}
+            style={{
+              borderRadius: '50%',
+              height: 77
+            }}
           >
             <Typography fontWeight={600}>Bet</Typography>
           </Button>
-        </div>
+        </Box>
       );
     }
     else {
