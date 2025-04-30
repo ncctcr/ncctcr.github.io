@@ -14,7 +14,6 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  border-bottom: 1px solid #2e2e2e;
   button {
     color: gray;
   }
