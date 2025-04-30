@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Status.module.css';
+import { Box, Divider, Typography } from '@mui/material';
 
 type StatusProps = {
   message: string,
@@ -8,14 +8,15 @@ type StatusProps = {
 
 const Status: React.FC<StatusProps> = ({ message, balance }) => {
   return (
-    <div className={styles.statusContainer}>
-      <div className={styles.status}>
-        <h1 className={styles.value}>{message}</h1>
-      </div>
-      <div className={styles.balance}>
-        <h1 className={styles.value}>${balance}</h1>
-      </div>
-    </div>
+      <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'} style={{background: '#ffffff1c'}} borderRadius={3} p={1}>
+        <Box width={'100%'}>
+          <Typography fontSize={24} fontWeight={'bold'} textAlign={'center'}>{message}</Typography>
+        </Box>
+        <Divider orientation="vertical" variant="middle" style={{background: 'rgba(255,255,255,0.6)'}} />
+        <Box width={100} textAlign={'center'}>
+          <Typography fontSize={24} fontWeight={'bold'} textAlign={'center'} lineHeight={0.8}>${balance}</Typography>
+        </Box>
+      </Box>
   );
 }
 

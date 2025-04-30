@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Controls.module.css';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, TextField, Typography } from '@mui/material';
 import PanToolIcon from '@mui/icons-material/PanTool';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import AddBoxIcon from '@mui/icons-material/AddBox';
@@ -50,17 +50,31 @@ const Controls: React.FC<ControlsProps> = ({ balance, gameState, buttonState, be
     if (gameState === 0) {
       return (
         <div className={styles.controlsContainer}>
-          <div className={styles.betContainer}>
-            <h4>Amount:</h4>
-            <input autoFocus type='number' value={amount} onChange={amountChange} className={inputStyle} />
-          </div>
-          <Button variant={'contained'} onClick={() => onBetClick()} className={styles.button}>Bet</Button>
+          <TextField
+            label="Amount"
+            variant="outlined"
+            value={amount}
+            onChange={amountChange}
+            fullWidth
+            autoFocus
+          />
+          <Button
+            variant={'contained'}
+            onClick={() => onBetClick()}
+            className={styles.button}
+          >
+            <Typography fontWeight={600}>Bet</Typography>
+          </Button>
         </div>
       );
     }
     else {
       return (
-        <div className={styles.controlsContainer}>
+        <div className={styles.controlsContainer} style={{
+          position: 'fixed',
+          bottom: 20,
+          width: 'calc(100% - 32px)',
+        }}>
           <Button
             color={'success'}
             variant={'contained'}

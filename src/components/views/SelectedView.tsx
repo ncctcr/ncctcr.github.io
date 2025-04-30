@@ -14,6 +14,12 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+  position: relative;
+  span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   button {
     color: gray;
   }
@@ -25,6 +31,7 @@ const Body = styled.div`
 `
 
 type TypeProps = {
+  title?: string;
   onBack: () => void;
   children: ReactNode;
   styles?: {
@@ -33,10 +40,11 @@ type TypeProps = {
   }
 }
 
-const SelectedView: FC<TypeProps> = ({ onBack, children, styles}) => {
+const SelectedView: FC<TypeProps> = ({ title, onBack, children, styles}) => {
   return (
     <Wrapper style={styles?.body}>
       <Header style={styles?.header}>
+        {title && <span>{title}</span>}
         <Button onClick={onBack}><ClearIcon/></Button>
       </Header>
       <Body>

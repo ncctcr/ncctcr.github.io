@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import SkillIcon from '../../assets/icons/dock/skills.png';
 import ExperienceIcon from '../../assets/icons/dock/experience.png';
@@ -135,6 +135,14 @@ const APPLICATIONS: TypeApplication[] = [
     key: 'blackjack',
     icon: BlackjackIcon,
     content: <BlackjackContent />,
+    styles: {
+      header: {
+        background: '#001a08',
+      },
+      body: {
+        background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)',
+      }
+    }
   },
 ]
 

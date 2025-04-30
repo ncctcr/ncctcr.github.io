@@ -17,7 +17,6 @@ import EducationContent from '../contents/EducationContent';
 import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
 import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
-import ContactsWidget from '../widgets/components/ContactsWidget';
 import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
 
 const Icon = styled.img`
@@ -84,9 +83,6 @@ const MainView = (props: {onClick: (view: number) => void}) => (
       <Grid size={6}>
         <CalendarWidget />
       </Grid>
-      {/*<Grid size={12}>*/}
-      {/*  <ContactsWidget />*/}
-      {/*</Grid>*/}
     </Grid>
   </Box>
 )
@@ -96,11 +92,11 @@ const MobileView = () => {
 
   const VIEWS: {[key: number]: ReactNode} = {
     0: <MainView onClick={setView} />,
-    1: <SelectedView onBack={() => setView(0)}><SkillsContent/></SelectedView>,
-    2: <SelectedView onBack={() => setView(0)}><ExperienceContent/></SelectedView>,
-    3: <SelectedView onBack={() => setView(0)}><EducationContent/></SelectedView>,
-    4: <SelectedView onBack={() => setView(0)}><LicensesContent/></SelectedView>,
-    5: <SelectedView onBack={() => setView(0)}><ContactsContent/></SelectedView>,
+    1: <SelectedView onBack={() => setView(0)} title={'Skills'}><SkillsContent/></SelectedView>,
+    2: <SelectedView onBack={() => setView(0)} title={'Experience'}><ExperienceContent/></SelectedView>,
+    3: <SelectedView onBack={() => setView(0)} title={'Education'}><EducationContent/></SelectedView>,
+    4: <SelectedView onBack={() => setView(0)} title={'Licenses'}><LicensesContent/></SelectedView>,
+    5: <SelectedView onBack={() => setView(0)} title={'Contacts'}><ContactsContent/></SelectedView>,
     6: <SelectedView styles={{body: {background: '#cebda6'}}} onBack={() => setView(0)}><PuzzleContent/></SelectedView>,
     7: <SelectedView styles={{body: {background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)'}}} onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
   };

@@ -12,6 +12,10 @@
 	width: 100%;
 	border-radius: 15px;
 	border: 1px solid #ffffff45;
+	h4 {
+		margin: 10px;
+		font-size: 100%;
+	}
 }
 
 .input {
@@ -51,7 +55,7 @@
 .button {
 	font-weight: bold !important;
 	width: 30%;
-	border-radius: 15px !important;
+	border-radius: 10px !important;
 }
 
 @media screen and (max-width: 600px) {

@@ -25,6 +25,7 @@ const Clock = styled.div`
 const DateTime = styled.div`
 	font-size: 14px;
 	color: #9c9595;
+  text-align: center;
 `;
 
 const TimeWidget = () => {

@@ -261,19 +261,19 @@ const BlackjackContent: React.FC = () => {
   }
 
   return (
-    <Box display={'flex'} flexDirection={'column'} gap={2} p={2}>
+    <Box display={'flex'} flexDirection={'column'} gap={2} p={2} height={'calc(100% - 40px)'} position={'relative'}>
       <Status message={message} balance={balance} />
-      <Controls
-        balance={balance}
-        gameState={gameState}
-        buttonState={buttonState}
-        betEvent={placeBet}
-        hitEvent={hit}
-        standEvent={stand}
-        resetEvent={resetGame}
-      />
-      <Hand title={`Dealer's Hand (${dealerScore})`} cards={dealerCards} />
-      <Hand title={`Your Hand (${userScore})`} cards={userCards} />
+      {dealerCards.length > 0 && <Hand title={`Dealer's Hand (${dealerScore})`} cards={dealerCards} />}
+      {userCards.length > 0 && <Hand title={`Your Hand (${userScore})`} cards={userCards} />}
+        <Controls
+          balance={balance}
+          gameState={gameState}
+          buttonState={buttonState}
+          betEvent={placeBet}
+          hitEvent={hit}
+          standEvent={stand}
+          resetEvent={resetGame}
+        />
     </Box>
   );
 }
