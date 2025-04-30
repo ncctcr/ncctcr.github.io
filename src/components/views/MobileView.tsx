@@ -101,8 +101,8 @@ const MobileView = () => {
     3: <SelectedView onBack={() => setView(0)}><EducationContent/></SelectedView>,
     4: <SelectedView onBack={() => setView(0)}><LicensesContent/></SelectedView>,
     5: <SelectedView onBack={() => setView(0)}><ContactsContent/></SelectedView>,
-    6: <SelectedView onBack={() => setView(0)}><PuzzleContent/></SelectedView>,
-    7: <SelectedView styles={{body: {background: '#02571d'}}} onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
+    6: <SelectedView styles={{body: {background: '#cebda6'}}} onBack={() => setView(0)}><PuzzleContent/></SelectedView>,
+    7: <SelectedView styles={{body: {background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)'}}} onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
   };
 
   return (

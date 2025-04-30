@@ -115,6 +115,14 @@ const APPLICATIONS: TypeApplication[] = [
     key: '2048',
     icon: PuzzleIcon,
     content: <PuzzleContent />,
+    styles: {
+      body: {
+        background: '#cebda6',
+      },
+      header: {
+        background: '#7a6a5b'
+      }
+    },
     settings: {
       width: 400,
       minWidth: 400,

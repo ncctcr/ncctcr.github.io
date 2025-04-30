@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { CSSProperties, FC, ReactNode } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -30,7 +30,7 @@ const Title = styled.div`
 `
 
 const Body = styled.div`
-  font-size: 12px;
+  font-size: 13px;
   color: #cdcdcd;
 `
 
@@ -39,6 +39,12 @@ type TypeProps = {
   children: ReactNode
   icon?: string;
   backgroundIcon?: boolean;
+  styles?: {
+    wrapper?: CSSProperties;
+    content?: CSSProperties;
+    title?: CSSProperties;
+    body?: CSSProperties;
+  };
 }
 
 const Description: FC<TypeProps> = ({
@@ -46,13 +52,14 @@ const Description: FC<TypeProps> = ({
   children,
   icon,
   backgroundIcon = false,
+  styles
 }) => {
   return (
-    <Wrapper>
+    <Wrapper style={styles?.wrapper}>
       {icon && <img src={icon} alt={`${icon} icon`} style={backgroundIcon ? {background: '#000'} : {}}/>}
-      <Content>
-        <Title><span>{title}</span></Title>
-        <Body><span>{children}</span></Body>
+      <Content style={styles?.content}>
+        <Title style={styles?.title}><span>{title}</span></Title>
+        <Body style={styles?.body}><span>{children}</span></Body>
       </Content>
     </Wrapper>
   );

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Controls.module.css';
-import { Button } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import PanToolIcon from '@mui/icons-material/PanTool';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 type ControlsProps = {
   balance: number,
@@ -58,9 +61,40 @@ const Controls: React.FC<ControlsProps> = ({ balance, gameState, buttonState, be
     else {
       return (
         <div className={styles.controlsContainer}>
-          <Button variant={'contained'} onClick={() => hitEvent()} disabled={buttonState.hitDisabled} className={styles.button}>Hit</Button>
-          <Button variant={'contained'} onClick={() => standEvent()} disabled={buttonState.standDisabled} className={styles.button}>Stand</Button>
-          <Button variant={'contained'} onClick={() => resetEvent()} disabled={buttonState.resetDisabled} className={styles.button}>Reset</Button>
+          <Button
+            color={'success'}
+            variant={'contained'}
+            onClick={() => hitEvent()}
+            disabled={buttonState.hitDisabled}
+            className={styles.button}
+          >
+            <Box display={'flex'} gap={1} p={1}>
+              <AddBoxIcon/>
+              <Typography fontWeight={600}>Hit</Typography>
+            </Box>
+          </Button>
+          <Button
+            color={'error'}
+            variant={'contained'}
+            onClick={() => standEvent()}
+            disabled={buttonState.standDisabled}
+            className={styles.button}
+          >
+            <Box display={'flex'} gap={1} p={1}>
+              <PanToolIcon />
+              <Typography fontWeight={600}>Stand</Typography>
+            </Box>
+          </Button>
+          <Button
+            variant={'contained'}
+            onClick={() => resetEvent()}
+            disabled={buttonState.resetDisabled}
+            className={styles.button}>
+            <Box display={'flex'} gap={1} p={1}>
+              <RestartAltIcon/>
+              <Typography fontWeight={600}>Reset</Typography>
+            </Box>
+          </Button>
         </div>
       );
     }

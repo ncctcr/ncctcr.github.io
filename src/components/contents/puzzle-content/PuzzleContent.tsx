@@ -32,7 +32,7 @@ const Info = styled(Box)`
   max-width: 500px;
   padding: 10px;
   border-radius: 8px;
-  background-color: #282c34;
+  background-color: #b59d87;
   color: #fff;
 `
 
@@ -44,7 +44,11 @@ const PuzzleContent = () => {
 
   return (
     <Wrapper>
-      <Description title={'2048'} icon={PuzzleIcon}>
+      <Description title={'2048'} icon={PuzzleIcon} styles={{
+        wrapper: {background: '#b59d87', border: 'unset'},
+        title: {color: '#fff'},
+        body: {color: '#fff'},
+      }}>
         The objective of the game is to slide numbered tiles on a grid to combine them to create a tile with the number 2048.
         The implementation has been taken from <Link href={'https://github.com/mateuszsokola/2048-in-react'} target={'_blank'}>here</Link>
       </Description>
