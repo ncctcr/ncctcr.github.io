@@ -1,6 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Nesterchuk Dev.",
+  "name": "Mykola Nesterchuk | React Developer",
+  "description": "Frontend Developer with 5+ years of experience specializing in React.js, TypeScript, and Next.js. Proven track record in international companies building scalable web applications and delivering high-quality solutions.",
+  "lang": "en",
+  "scope": "/",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "favicon.ico",
