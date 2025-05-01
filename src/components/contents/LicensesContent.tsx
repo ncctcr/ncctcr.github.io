@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Description from '../shared/Description';
 import LicenceIcon from '../../assets/icons/dock/licence.png';
@@ -6,8 +6,9 @@ import HackathonImg from '../../assets/images/certificates/covid-challenge-hacka
 import LearningImg from '../../assets/images/certificates/learning-typescript.png';
 import ReactImg from '../../assets/images/certificates/react-using-typescript.png';
 import { shortenText } from '../../functions';
-import { Box } from '@mui/material';
+import { Box, IconButton, useMediaQuery, useTheme } from '@mui/material';
 import { useWindows } from '../../contexts/WindowContext';
+import ClearIcon from '@mui/icons-material/Clear';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -45,6 +46,27 @@ const Item = styled.div`
   }
 `
 
+const Image = styled.div`
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  left: 0;
+  top: 0;
+  button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+  }
+  img {
+    width: 100%;
+  }
+`
+
 const IMAGES = [
   {
     src: HackathonImg,
@@ -61,7 +83,10 @@ const IMAGES = [
 ]
 
 const LicensesContent = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
   const {state, createWindow, bringToFrontByKey} = useWindows();
+  const [image, setImage] = useState<{src: string, name: string} | null>(null);
 
   const handleOpen = (item: any) => {
     if (state.windows.some((i) => i.key === item.name)) {
@@ -89,7 +114,7 @@ const LicensesContent = () => {
       </Description>
       <Box display={'flex'} gap={2}>
         {IMAGES.map((image, index) => (
-          <Item key={index} onClick={() => handleOpen(image)}>
+          <Item key={index} onClick={() => isMobile ? setImage(image) : handleOpen(image)}>
             <div>
               <img src={image.src} alt="Hackathon"/>
             </div>
@@ -99,6 +124,14 @@ const LicensesContent = () => {
           </Item>
         ))}
       </Box>
+      {image && (
+        <Image>
+          <IconButton size={'large'} onClick={() => setImage(null)}>
+            <ClearIcon sx={{ fontSize: 30}}/>
+          </IconButton>
+          <img src={image.src} alt={image.name}/>
+        </Image>
+      )}
     </Wrapper>
   );
 };
