@@ -1,6 +1,6 @@
 import React, { CSSProperties, FC, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 
 const Wrapper = styled.div`
@@ -45,7 +45,7 @@ const SelectedView: FC<TypeProps> = ({ title, onBack, children, styles}) => {
     <Wrapper style={styles?.body}>
       <Header style={styles?.header}>
         {title && <span>{title}</span>}
-        <Button onClick={onBack}><ClearIcon/></Button>
+        <IconButton onClick={onBack}><ClearIcon/></IconButton>
       </Header>
       <Body>
         {children}
