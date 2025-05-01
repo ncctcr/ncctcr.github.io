@@ -23,7 +23,7 @@ const Controls: React.FC<ControlsProps> = ({ balance, gameState, buttonState, be
   const total = chips.reduce((a, b) => a + b, 0);
 
   const onBetClick = () => {
-    if (total && total < balance) {
+    if (total && total <= balance) {
       betEvent(total);
     }
   }
