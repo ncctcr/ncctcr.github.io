@@ -1,9 +1,8 @@
 import React from 'react';
-import { Avatar, Box, Grid, Typography } from '@mui/material';
+import { Avatar, Box, Grid, Rating, Typography } from '@mui/material';
 import AvatarImg from '../../assets/images/avatar.png'
 import Block from '../shared/Block';
 import styled from 'styled-components';
-
 
 const Wrapper = styled.div`
 	display: flex;
@@ -54,7 +53,7 @@ const AboutMeContent = () => {
         </Box>
       </Block>
       <Grid container spacing={2} width={'100%'}>
-        <Grid size={6}>
+        <Grid size={12}>
           <Block title={'Languages'}>
             <Box p={2}>
               <Grid container spacing={2}>
@@ -62,25 +61,27 @@ const AboutMeContent = () => {
                   <Typography fontSize={FONT_SIZE}>English</Typography>
                 </Grid>
                 <Grid size={6}>
-                  <Typography fontSize={FONT_SIZE}>Professional working proficiency</Typography>
+                  <Rating value={4} readOnly />
                 </Grid>
                 <Grid size={6}>
                   <Typography fontSize={FONT_SIZE}>Ukrainian</Typography>
                 </Grid>
                 <Grid size={6}>
-                  <Typography fontSize={FONT_SIZE}>Native or bilingual proficiency</Typography>
+                  <Typography fontSize={FONT_SIZE}>
+                    <Rating value={5} readOnly />
+                  </Typography>
                 </Grid>
                 <Grid size={6}>
                   <Typography fontSize={FONT_SIZE}>Russian</Typography>
                 </Grid>
                 <Grid size={6}>
-                  <Typography fontSize={FONT_SIZE}>Native or bilingual proficiency</Typography>
+                  <Rating value={5} readOnly />
                 </Grid>
               </Grid>
             </Box>
           </Block>
         </Grid>
-        <Grid size={6}>
+        <Grid size={12}>
           <Block title={'Location'}>
             <Box p={2}>
               <Grid container spacing={2}>
