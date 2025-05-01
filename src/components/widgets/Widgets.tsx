@@ -5,6 +5,7 @@ import TimeWidget from './components/TimeWidget';
 import VideoWidget from './components/VideoWidget';
 import { Box, Grid } from '@mui/material';
 import ContactsWidget from './components/ContactsWidget';
+import UnitedWidget from './components/UnitedWidget';
 
 const Wrapper = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
@@ -28,9 +29,12 @@ const Widgets = () => {
             <Grid size={12}>
               <VideoWidget />
             </Grid>
-            {/*<Grid size={6}/>*/}
             <Grid size={12}>
               <ContactsWidget />
+            </Grid>
+            <Grid size={6}></Grid>
+            <Grid size={6}>
+              <UnitedWidget />
             </Grid>
           </Grid>
         </Box>

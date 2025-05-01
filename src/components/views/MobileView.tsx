@@ -20,6 +20,7 @@ import ContactsContent from '../contents/ContactsContent';
 import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
 import AboutMeContent from '../contents/AboutMeContent';
+import UnitedWidget from '../widgets/components/UnitedWidget';
 
 const Icon = styled.img`
   width: 100%;
@@ -87,6 +88,9 @@ const MainView = (props: {onClick: (view: number) => void}) => (
       </Grid>
       <Grid size={6}>
         <CalendarWidget />
+      </Grid>
+      <Grid size={6}>
+        <UnitedWidget/>
       </Grid>
     </Grid>
   </Box>
