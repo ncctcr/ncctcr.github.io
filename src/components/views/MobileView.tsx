@@ -48,7 +48,7 @@ const Application = (props: {name: string, icon: string}) => {
 
 const SPACING = 4;
 
-const MainView = (props: {onClick: (view: number) => void}) => (
+const MainView = (props: {onClick: (view: number, event: React.MouseEvent) => void, children: ReactNode}) => (
   <Box padding={3}>
     <Grid container spacing={SPACING}>
       <Grid size={6}>
@@ -56,32 +56,32 @@ const MainView = (props: {onClick: (view: number) => void}) => (
       </Grid>
       <Grid size={6}>
         <Grid container spacing={SPACING}>
-          <Grid size={6} onClick={() => props.onClick(1)}>
+          <Grid size={6} onClick={(e) => props.onClick(1, e)}>
             <Application name={'Skills'} icon={SkillIcon}/>
           </Grid>
-          <Grid size={6} onClick={() => props.onClick(2)}>
+          <Grid size={6} onClick={(e) => props.onClick(2, e)}>
             <Application name={'Experience'} icon={ExperienceIcon}/>
           </Grid>
-          <Grid size={6} onClick={() => props.onClick(3)}>
+          <Grid size={6} onClick={(e) => props.onClick(3, e)}>
             <Application name={'Education'} icon={EducatitonIcon}/>
           </Grid>
-          <Grid size={6} onClick={() => props.onClick(4)}>
+          <Grid size={6} onClick={(e) => props.onClick(4, e)}>
             <Application name={'Licenses'} icon={LicenceIcon}/>
           </Grid>
         </Grid>
       </Grid>
       <Grid size={6}>
         <Grid container spacing={SPACING}>
-          <Grid size={6} onClick={() => props.onClick(5)}>
+          <Grid size={6} onClick={(e) => props.onClick(5, e)}>
             <Application name={'Contacts'} icon={ContactIcon}/>
           </Grid>
-          <Grid size={6} onClick={() => props.onClick(8)}>
+          <Grid size={6} onClick={(e) => props.onClick(8, e)}>
             <Application name={'About Me'} icon={AboutMeIcon}/>
           </Grid>
-          <Grid size={6} onClick={() => props.onClick(6)}>
+          <Grid size={6} onClick={(e) => props.onClick(6, e)}>
             <Application name={'2048'} icon={PuzzleIcon}/>
           </Grid>
-          <Grid size={6} onClick={() => props.onClick(7)}>
+          <Grid size={6} onClick={(e) => props.onClick(7, e)}>
             <Application name={'Blackjack'} icon={BlackjackIcon}/>
           </Grid>
         </Grid>
@@ -93,26 +93,41 @@ const MainView = (props: {onClick: (view: number) => void}) => (
         <UnitedWidget/>
       </Grid>
     </Grid>
+    {props.children}
   </Box>
 )
 
 const MobileView = () => {
   const [view, setView] = useState(0);
+  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
+
+  const handleViewChange = (newView: number, event: React.MouseEvent) => {
+    setClickPosition({
+      x: event.clientX,
+      y: event.clientY
+    });
+    setView(newView);
+  };
+
+  const handleBack = () => {
+    setView(0)
+  }
 
   const VIEWS: {[key: number]: ReactNode} = {
-    0: <MainView onClick={setView} />,
-    1: <SelectedView onBack={() => setView(0)} title={'Skills'}><SkillsContent/></SelectedView>,
-    2: <SelectedView onBack={() => setView(0)} title={'Experience'}><ExperienceContent/></SelectedView>,
-    3: <SelectedView onBack={() => setView(0)} title={'Education'}><EducationContent/></SelectedView>,
-    4: <SelectedView onBack={() => setView(0)} title={'Licenses'}><LicensesContent/></SelectedView>,
-    5: <SelectedView onBack={() => setView(0)} title={'Contacts'}><ContactsContent/></SelectedView>,
-    6: <SelectedView styles={{body: {background: '#cebda6'}}} onBack={() => setView(0)}><PuzzleContent/></SelectedView>,
-    7: <SelectedView styles={{body: {background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)'}}} onBack={() => setView(0)}><BlackjackContent/></SelectedView>,
-    8: <SelectedView onBack={() => setView(0)}><AboutMeContent/></SelectedView>,
+    1: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Skills'}><SkillsContent/></SelectedView>,
+    2: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Experience'}><ExperienceContent/></SelectedView>,
+    3: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Education'}><EducationContent/></SelectedView>,
+    4: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Licenses'}><LicensesContent/></SelectedView>,
+    5: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Contacts'}><ContactsContent/></SelectedView>,
+    6: <SelectedView clickPosition={clickPosition} styles={{body: {background: '#cebda6'}}} onBack={handleBack}><PuzzleContent/></SelectedView>,
+    7: <SelectedView clickPosition={clickPosition} styles={{body: {background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)'}}} onBack={handleBack}><BlackjackContent/></SelectedView>,
+    8: <SelectedView clickPosition={clickPosition} onBack={handleBack}><AboutMeContent/></SelectedView>,
   };
 
   return (
-    <>{VIEWS[view]}</>
+    <MainView onClick={handleViewChange}>
+      {VIEWS[view]}
+    </MainView>
   );
 };
 
