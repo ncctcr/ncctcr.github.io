@@ -75,7 +75,7 @@ type TypeProps = {
 }
 
 const SelectedView: FC<TypeProps> = ({ title, onBack, children, styles, clickPosition }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     setIsOpen(true);
@@ -86,6 +86,7 @@ const SelectedView: FC<TypeProps> = ({ title, onBack, children, styles, clickPos
     setTimeout(onBack, 300);
   };
 
+  console.log('isOpen', isOpen);
   return (
     <Wrapper
       style={styles?.body}
