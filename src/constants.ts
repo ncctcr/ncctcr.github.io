@@ -1,13 +1,3 @@
-export const WINDOW_NAMES: {[key: string]: string} = {
-  skills: 'Skills',
-  experience: 'Experience',
-  education: 'Education',
-  licenses: 'Licenses & Certification',
-  contacts: 'Contacts',
-  2048: '2048',
-  blackjack: 'Blackjack',
-  about_me: 'About Me',
-}
 
 export const TECHNOLOGIES: {name: string, key: string}[] = [
   { name: 'React.js', key: 'reactjs'},

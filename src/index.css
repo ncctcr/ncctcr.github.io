@@ -13,6 +13,10 @@
   --secondary-text-color: #f9f6f2;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,22 +24,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body::before {
-  background-image: url("./assets/backgrounds/bg-1.jpeg");
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: -1;
 }
 
 code {

@@ -8,8 +8,8 @@ import ContactIcon from '../../assets/icons/dock/contact.png';
 import PuzzleIcon from '../../assets/icons/dock/2048.png';
 import BlackjackIcon from '../../assets/icons/dock/blackjack.png';
 import AboutMeIcon from '../../assets/icons/dock/about-me.png';
+import SettingsIcon from '../../assets/icons/dock/settings.png';
 import { Fade, Tooltip } from '@mui/material';
-import { WINDOW_NAMES } from '../../constants';
 import { useWindows } from '../../contexts/WindowContext';
 import SkillsContent from '../contents/skills-content/SkillsContent';
 import ExperienceContent from '../contents/experience-content/ExperienceContent';
@@ -20,6 +20,7 @@ import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import { TypeWindowSettings, TypeWindowStyles } from '../../interfaces';
 import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
 import AboutMeContent from '../contents/AboutMeContent';
+import SettingsContent from '../contents/settings-content/SettingsContent';
 
 const Wrapper = styled.div`
 	position: absolute;
@@ -76,9 +77,21 @@ type TypeApplication = {
   settings?: TypeWindowSettings;
 }
 
+
+// export const WINDOW_NAMES: {[key: string]: string} = {
+//   skills: 'Skills',
+//   experience: 'Experience',
+//   education: 'Education',
+//   licenses: 'Licenses & Certification',
+//   contacts: 'Contacts',
+//   2048: '2048',
+//   blackjack: 'Blackjack',
+//   about_me: 'About Me',
+// }
+
 const APPLICATIONS: TypeApplication[] = [
   {
-    name: WINDOW_NAMES['skills'],
+    name: 'Skills',
     key: 'skills',
     icon: SkillIcon,
     content: <SkillsContent />,
@@ -89,31 +102,31 @@ const APPLICATIONS: TypeApplication[] = [
     }
   },
   {
-    name: WINDOW_NAMES['experience'],
+    name: 'Experience',
     key: 'experience',
     icon: ExperienceIcon,
     content: <ExperienceContent />,
   },
   {
-    name: WINDOW_NAMES['education'],
+    name: 'Education',
     key: 'education',
     icon: EducatitonIcon,
     content: <EducationContent />,
   },
   {
-    name: WINDOW_NAMES['licenses'],
+    name: 'Licenses & Certification',
     key: 'licenses',
     icon: LicenceIcon,
     content: <LicensesContent />,
   },
   {
-    name: WINDOW_NAMES['contacts'],
+    name: 'Contacts',
     key: 'contacts',
     icon: ContactIcon,
     content: <ContactsContent />,
   },
   {
-    name: WINDOW_NAMES['about_me'],
+    name:'About me',
     key: 'about_me',
     icon: AboutMeIcon,
     content: <AboutMeContent />,
@@ -124,7 +137,7 @@ const APPLICATIONS: TypeApplication[] = [
     }
   },
   {
-    name: WINDOW_NAMES['2048'],
+    name: '2048',
     key: '2048',
     icon: PuzzleIcon,
     content: <PuzzleContent />,
@@ -144,7 +157,7 @@ const APPLICATIONS: TypeApplication[] = [
     }
   },
   {
-    name: WINDOW_NAMES['blackjack'],
+    name: 'Blackjack',
     key: 'blackjack',
     icon: BlackjackIcon,
     content: <BlackjackContent />,
@@ -155,6 +168,24 @@ const APPLICATIONS: TypeApplication[] = [
       body: {
         background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)',
       }
+    }
+  },
+  {
+    name: '',
+    key: 'settings',
+    icon: SettingsIcon,
+    content: <SettingsContent />,
+    styles: {
+      header: {
+        background: 'transparent',
+      },
+      body: {
+        background: '#1e1e1ed9',
+        backdropFilter: 'blur(20px)'
+      }
+    },
+    settings: {
+      width: 800,
     }
   },
 ]

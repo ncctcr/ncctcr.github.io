@@ -7,18 +7,22 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import theme from './theme';
 import { WindowsProvider } from './contexts/WindowContext';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import { BackgroundProvider } from './contexts/BackgroundContext';
+import Default from './assets/backgrounds/default.jpeg';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <WindowsProvider>
-        <CssBaseline/>
-        <App />
-      </WindowsProvider>
-    </ThemeProvider>
+    <BackgroundProvider defaultBackground={`url(${Default})`}>
+      <ThemeProvider theme={theme}>
+        <WindowsProvider>
+          <CssBaseline/>
+          <App />
+        </WindowsProvider>
+      </ThemeProvider>
+    </BackgroundProvider>
   </React.StrictMode>
 );
 
