@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Chip.module.css';
-import OneChip from '../../../../../assets/chips/1.png';
-import FiveChip from '../../../../../assets/chips/5.png';
-import TenChip from '../../../../../assets/chips/10.png';
-import TwentyChip from '../../../../../assets/chips/20.png';
-import FiftyChip from '../../../../../assets/chips/50.png';
+import OneChip from '../../../../../../../assets/chips/1.png';
+import FiveChip from '../../../../../../../assets/chips/5.png';
+import TenChip from '../../../../../../../assets/chips/10.png';
+import TwentyChip from '../../../../../../../assets/chips/20.png';
+import FiftyChip from '../../../../../../../assets/chips/50.png';
 
 interface ChipProps {
   value: number;

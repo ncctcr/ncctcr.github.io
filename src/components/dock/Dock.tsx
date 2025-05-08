@@ -5,10 +5,9 @@ import ExperienceIcon from '../../assets/icons/dock/experience.png';
 import EducatitonIcon from '../../assets/icons/dock/education.png';
 import LicenceIcon from '../../assets/icons/dock/licence.png';
 import ContactIcon from '../../assets/icons/dock/contact.png';
-import PuzzleIcon from '../../assets/icons/dock/2048.png';
-import BlackjackIcon from '../../assets/icons/dock/blackjack.png';
 import AboutMeIcon from '../../assets/icons/dock/about-me.png';
 import SettingsIcon from '../../assets/icons/dock/settings.png';
+import GamesIcon from '../../assets/icons/dock/games.png';
 import { Fade, Tooltip } from '@mui/material';
 import { useWindows } from '../../contexts/WindowContext';
 import SkillsContent from '../contents/skills-content/SkillsContent';
@@ -16,11 +15,10 @@ import ExperienceContent from '../contents/experience-content/ExperienceContent'
 import EducationContent from '../contents/EducationContent';
 import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
-import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
 import { TypeWindowSettings, TypeWindowStyles } from '../../interfaces';
-import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
 import AboutMeContent from '../contents/AboutMeContent';
 import SettingsContent from '../contents/settings-content/SettingsContent';
+import GamesContent from '../contents/games-content/GamesContent';
 
 const Wrapper = styled.div`
 	position: absolute;
@@ -137,38 +135,10 @@ const APPLICATIONS: TypeApplication[] = [
     }
   },
   {
-    name: '2048',
-    key: '2048',
-    icon: PuzzleIcon,
-    content: <PuzzleContent />,
-    styles: {
-      body: {
-        background: '#cebda6',
-      },
-      header: {
-        background: '#7a6a5b'
-      }
-    },
-    settings: {
-      width: 400,
-      minWidth: 400,
-      height: 650,
-      minHeight: 650
-    }
-  },
-  {
-    name: 'Blackjack',
-    key: 'blackjack',
-    icon: BlackjackIcon,
-    content: <BlackjackContent />,
-    styles: {
-      header: {
-        background: '#001a08',
-      },
-      body: {
-        background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)',
-      }
-    }
+    name: 'Games',
+    key: 'games',
+    icon: GamesIcon,
+    content: <GamesContent />,
   },
   {
     name: '',

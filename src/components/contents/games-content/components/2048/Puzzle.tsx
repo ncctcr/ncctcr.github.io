@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Description from '../../shared/Description';
-import PuzzleIcon from '../../../assets/icons/dock/2048.png';
+import Description from '../../../../shared/Description';
+import PuzzleIcon from '../../../../../assets/icons/dock/2048.png';
 import Board from './components/Board';
 import GameProvider from './context/GameContext';
 import { Alert, Box, Typography, useMediaQuery, useTheme } from '@mui/material';
@@ -36,7 +36,7 @@ const Info = styled(Box)`
 `
 
 
-const PuzzleContent = () => {
+const Puzzle = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
   const helperText = isMobile ? 'Use swipes to move cells around' : 'Use the arrow keys for move cells';
@@ -64,4 +64,4 @@ const PuzzleContent = () => {
   );
 };
 
-export default PuzzleContent;
+export default Puzzle;

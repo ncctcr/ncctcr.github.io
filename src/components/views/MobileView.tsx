@@ -17,8 +17,8 @@ import ExperienceContent from '../contents/experience-content/ExperienceContent'
 import EducationContent from '../contents/EducationContent';
 import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
-import PuzzleContent from '../contents/puzzle-content/PuzzleContent';
-import BlackjackContent from '../contents/blackjack-content/BlackjackContent';
+import Puzzle from '../contents/games-content/components/2048/Puzzle';
+import Blackjack from '../contents/games-content/components/blackjack/Blackjack';
 import AboutMeContent from '../contents/AboutMeContent';
 import UnitedWidget from '../widgets/components/UnitedWidget';
 
@@ -119,8 +119,8 @@ const MobileView = () => {
     3: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Education'}><EducationContent/></SelectedView>,
     4: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Licenses'}><LicensesContent/></SelectedView>,
     5: <SelectedView clickPosition={clickPosition} onBack={handleBack} title={'Contacts'}><ContactsContent/></SelectedView>,
-    6: <SelectedView clickPosition={clickPosition} styles={{body: {background: '#cebda6'}}} onBack={handleBack}><PuzzleContent/></SelectedView>,
-    7: <SelectedView clickPosition={clickPosition} styles={{body: {background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)'}}} onBack={handleBack}><BlackjackContent/></SelectedView>,
+    6: <SelectedView clickPosition={clickPosition} styles={{body: {background: '#cebda6'}}} onBack={handleBack}><Puzzle/></SelectedView>,
+    7: <SelectedView clickPosition={clickPosition} styles={{body: {background: 'radial-gradient(circle,rgba(0, 84, 28, 1) 0%, rgba(0, 48, 15, 1) 100%)'}}} onBack={handleBack}><Blackjack/></SelectedView>,
     8: <SelectedView clickPosition={clickPosition} onBack={handleBack}><AboutMeContent/></SelectedView>,
   };
 

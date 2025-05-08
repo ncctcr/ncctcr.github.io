@@ -5,7 +5,7 @@ import Controls from './components/controls/Controls';
 import Hand from './components/hand/Hand';
 import { Box } from '@mui/material';
 
-const BlackjackContent: React.FC = () => {
+const Blackjack: React.FC = () => {
   enum GameState {
     bet,
     init,
@@ -278,4 +278,4 @@ const BlackjackContent: React.FC = () => {
   );
 }
 
-export default BlackjackContent;
+export default Blackjack;
