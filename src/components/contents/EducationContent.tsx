@@ -3,15 +3,13 @@ import styled from 'styled-components';
 import Block from '../shared/Block';
 import { Box, Grid, Typography } from '@mui/material';
 import Description from '../shared/Description';
-import ExperienceIcon from '../../assets/icons/dock/experience.png';
-import EducatitonIcon from '../../assets/icons/dock/education.png';
+import EducationIcon from '../../assets/icons/dock/education.png';
 
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
 	padding: 20px;
-	margin-bottom: 40px;
 `
 
 const Row = (props: {name: string, value: string}) => {
@@ -30,7 +28,7 @@ const Row = (props: {name: string, value: string}) => {
 const EducationContent = () => {
   return (
     <Wrapper>
-      <Description title={'Education'} icon={EducatitonIcon}>
+      <Description title={'Education'} icon={EducationIcon}>
         Here you can see my diplomas. On personal request I can send the originals to your e-mail address
       </Description>
       <Block title={'Bachelor\'s Diploma'} brackets={'B20 184726'}>

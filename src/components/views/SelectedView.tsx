@@ -4,6 +4,8 @@ import { IconButton } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 
 const Wrapper = styled.div<{ $clickX: number; $clickY: number; $isOpen: boolean }>`
+  display: flex;
+  flex-direction: column;
 	color: #dddddd;
 	background: #1e1e1e;
 	height: 100dvh;
@@ -59,8 +61,8 @@ const Header = styled.div`
 `
 
 const Body = styled.div`
-  height: 100%;
   overflow-y: auto;
+  flex: 1;
 `
 
 type TypeProps = {

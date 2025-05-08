@@ -6,11 +6,13 @@ import ReziseIcon from '../../../assets/icons/resize.svg';
 import { TypeWindowStyles } from '../../../interfaces';
 
 const Wrapper = styled('div')`
-	border: 0.05rem solid #777777;
-  color: #dddddd;
-	background: #1e1e1e;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	width: 100%;
-  height: 100%;
+	background: #1e1e1e;
+	border: 0.05rem solid #777777;
+	color: #dddddd;
 	box-shadow: 0 20px 68px rgba(0, 0, 0, 0.55);
 	border-radius: 0.5rem;
 	position: relative;
@@ -20,7 +22,8 @@ const Wrapper = styled('div')`
 
 const Header = styled.div<{ isDragging: boolean }>`
 	height: 2rem;
-	line-height: 2rem;
+	min-height: 2rem;
+	flex-shrink: 0;
 	background: #363636;
 	color: #444;
 	width: 100%;
@@ -39,8 +42,8 @@ const Header = styled.div<{ isDragging: boolean }>`
 `
 
 const Body = styled.div`
-  overflow: auto;
-  height: 100%;
+	flex: 1;
+	overflow: auto;
 `
 
 const Buttons = styled.div`

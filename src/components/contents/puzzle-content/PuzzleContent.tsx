@@ -12,7 +12,6 @@ const Wrapper = styled.div`
   align-items: center;
 	gap: 30px;
 	padding: 20px;
-	margin-bottom: 40px;
 `
 
 const Link = styled.a`
