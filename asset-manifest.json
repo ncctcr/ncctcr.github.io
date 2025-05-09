@@ -1,14 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e266bb04.css",
-    "main.js": "/static/js/main.4d857dd8.js",
+    "main.css": "/static/css/main.519bf4ba.css",
+    "main.js": "/static/js/main.cac95e0c.js",
     "static/js/453.ad631ce7.chunk.js": "/static/js/453.ad631ce7.chunk.js",
-    "static/media/bg-1.jpeg": "/static/media/bg-1.3a73dd525424eec04eaa.jpeg",
+    "static/media/sequoia-sunrise.png": "/static/media/sequoia-sunrise.c260bad6ee67dfaff1f9.png",
+    "static/media/sonoma-horizon.png": "/static/media/sonoma-horizon.7da3b09dd9555365f7a6.png",
+    "static/media/patagonia-mountain.jpg": "/static/media/patagonia-mountain.92073868b573413bca8c.jpg",
+    "static/media/default.jpeg": "/static/media/default.3a73dd525424eec04eaa.jpeg",
     "static/media/covid-challenge-hackathon.png": "/static/media/covid-challenge-hackathon.c26fa5d265195efe6016.png",
     "static/media/united24.png": "/static/media/united24.3f862dc20f8398855bd6.png",
     "static/media/about-me.png": "/static/media/about-me.f98df581f6d63645c1be.png",
     "static/media/avatar.png": "/static/media/avatar.5801ae0a00c2ef1b39a7.png",
+    "static/media/pro-black.png": "/static/media/pro-black.b89e249f9832830ffcc2.png",
+    "static/media/ventura.jpg": "/static/media/ventura.dded75926acbce29d6e0.jpg",
     "static/media/react.png": "/static/media/react.8a6fc0a24a800d1e0f4a.png",
+    "static/media/doom.png": "/static/media/doom.fa7d69f804174687a4b9.png",
     "static/media/blackjack.png": "/static/media/blackjack.c440e9e2685ff482ca05.png",
     "static/media/skills.png": "/static/media/skills.94109eaa62b7880cd5c4.png",
     "static/media/education.png": "/static/media/education.5ce435c58955fa6a1baa.png",
@@ -17,13 +23,17 @@
     "static/media/licence.png": "/static/media/licence.7eed57b06a27b3ec295c.png",
     "static/media/experience.png": "/static/media/experience.273bb7257850f3cbbdeb.png",
     "static/media/learning-typescript.png": "/static/media/learning-typescript.0898ad94aafaf8362e31.png",
+    "static/media/settings.png": "/static/media/settings.48c8a8ff1163594511dc.png",
     "static/media/10.png": "/static/media/10.66d42d19d976bd0df99c.png",
     "static/media/2048.png": "/static/media/2048.02133015a722ce520557.png",
     "static/media/50.png": "/static/media/50.a3bc42f8f4e9087b33df.png",
     "static/media/1.png": "/static/media/1.a7277f4d415feb847ae3.png",
     "static/media/20.png": "/static/media/20.d1ec10c479e12ca61a22.png",
     "static/media/5.png": "/static/media/5.cf8c05a24e74537715d9.png",
+    "static/media/wallpaper.png": "/static/media/wallpaper.0d433fc3d216e408d5d9.png",
     "static/media/chartjs.png": "/static/media/chartjs.4a930fbc8ffc21fbeb8c.png",
+    "static/media/games.png": "/static/media/games.cd0d0a9a0504566976e5.png",
+    "static/media/digger.png": "/static/media/digger.597e6078e25849dc95a9.png",
     "static/media/axios.png": "/static/media/axios.7c5e0cbd3a9f055b4c08.png",
     "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
     "static/media/haccess.png": "/static/media/haccess.74dc7c794870f77abe00.png",
@@ -36,12 +46,12 @@
     "static/media/close.svg": "/static/media/close.1d2aeb4cd638d64b9a1846b630e7cdfc.svg",
     "static/media/hide.svg": "/static/media/hide.031ae33fb154ac7b17135946955b9d84.svg",
     "static/media/resize.svg": "/static/media/resize.336c41f63adfa4399a297f91a130001b.svg",
-    "main.e266bb04.css.map": "/static/css/main.e266bb04.css.map",
-    "main.4d857dd8.js.map": "/static/js/main.4d857dd8.js.map",
+    "main.519bf4ba.css.map": "/static/css/main.519bf4ba.css.map",
+    "main.cac95e0c.js.map": "/static/js/main.cac95e0c.js.map",
     "453.ad631ce7.chunk.js.map": "/static/js/453.ad631ce7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e266bb04.css",
-    "static/js/main.4d857dd8.js"
+    "static/css/main.519bf4ba.css",
+    "static/js/main.cac95e0c.js"
   ]
 }
