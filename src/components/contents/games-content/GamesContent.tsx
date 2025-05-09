@@ -4,12 +4,15 @@ import Puzzle from './games/2048/Puzzle';
 import BlackjackIcon from '../../../assets/icons/games/blackjack.png';
 import DoomIcon from '../../../assets/icons/games/doom.png';
 import DiggerIcon from '../../../assets/icons/games/digger.png';
+import Duke3DIcon from '../../../assets/icons/games/duke3d.png';
+import PopIcon from '../../../assets/icons/games/pop.png';
+import QuakeIcon from '../../../assets/icons/games/quake.png';
+import ArenaIcon from '../../../assets/icons/games/arena.png';
 import Blackjack from './games/blackjack/Blackjack';
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import styled from 'styled-components';
-import Doom from './games/doom/Doom';
-import Digger from './games/digger/Digger';
+import DosEmulator from '../../shared/DosEmulator';
 
 const Game = styled(Box)`
   display: flex;
@@ -18,10 +21,13 @@ const Game = styled(Box)`
   justify-content: center;
   align-items: center;
   gap: 5px;
+  text-align: center;
   img {
     height: 70px;
     width: 70px;
     border-radius: 15px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
   }
 `
 
@@ -64,7 +70,7 @@ const GAMES = [
     name: 'DOOM',
     key: 'doom',
     icon: DoomIcon,
-    content: <Doom />,
+    content: <DosEmulator bundleUrl={'/games/doom.jsdos'}/>,
     settings: {
       width: 900,
     }
@@ -73,7 +79,43 @@ const GAMES = [
     name: 'Digger 1983',
     key: 'digger',
     icon: DiggerIcon,
-    content: <Digger />,
+    content: <DosEmulator bundleUrl={'/games/digger.jsdos'}/>,
+    settings: {
+      width: 900,
+    }
+  },
+  {
+    name: 'DUKE NUKEM 3D',
+    key: 'duke3d',
+    icon: Duke3DIcon,
+    content: <DosEmulator bundleUrl={'/games/duke3d.jsdos'}/>,
+    settings: {
+      width: 900,
+    }
+  },
+  {
+    name: 'Prince of Persia',
+    key: 'pop',
+    icon: PopIcon,
+    content: <DosEmulator bundleUrl={'/games/pop.jsdos'}/>,
+    settings: {
+      width: 900,
+    }
+  },
+  {
+    name: 'QUAKE',
+    key: 'quake',
+    icon: QuakeIcon,
+    content: <DosEmulator bundleUrl={'/games/quake.jsdos'}/>,
+    settings: {
+      width: 900,
+    }
+  },
+  {
+    name: 'The Elder Scrolls: Arena',
+    key: 'arena',
+    icon: ArenaIcon,
+    content: <DosEmulator bundleUrl={'/games/arena.jsdos'}/>,
     settings: {
       width: 900,
     }
@@ -101,13 +143,17 @@ const GamesContent = () => {
   }
 
   return (
-    <Box display={'flex'} gap={2} p={2}>
-      {GAMES.map((i) => (
-        <Game key={i.key} onClick={() => handleOpen(i)}>
-          <img src={i.icon} alt={i.name} />
-          <Typography fontSize={12}>{i.name}</Typography>
-        </Game>
-      ))}
+    <Box p={2}>
+      <Grid container spacing={2}>
+        {GAMES.map((i) => (
+          <Grid size={3}>
+            <Game key={i.key} onClick={() => handleOpen(i)}>
+              <img src={i.icon} alt={i.name} />
+              <Typography fontSize={12}>{i.name}</Typography>
+            </Game>
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   )
 };
