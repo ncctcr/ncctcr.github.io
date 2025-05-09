@@ -34,7 +34,7 @@ const Bar = styled.div`
 	justify-content: center;
 	align-items: center;
 	border-radius: 20px;
-  padding: 10px 4px 5px;
+  padding: 10px 4px 10px;
 	background: rgba(55, 55, 55, 0.29);
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	backdrop-filter: blur(10px);
@@ -63,7 +63,7 @@ const Dot = styled.div`
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	bottom: -2px;
+	bottom: -7px;
 `
 
 type TypeApplication = {
@@ -74,18 +74,6 @@ type TypeApplication = {
   styles?: TypeWindowStyles;
   settings?: TypeWindowSettings;
 }
-
-
-// export const WINDOW_NAMES: {[key: string]: string} = {
-//   skills: 'Skills',
-//   experience: 'Experience',
-//   education: 'Education',
-//   licenses: 'Licenses & Certification',
-//   contacts: 'Contacts',
-//   2048: '2048',
-//   blackjack: 'Blackjack',
-//   about_me: 'About Me',
-// }
 
 const APPLICATIONS: TypeApplication[] = [
   {

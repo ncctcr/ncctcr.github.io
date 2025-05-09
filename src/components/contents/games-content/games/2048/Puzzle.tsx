@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Description from '../../../../shared/Description';
-import PuzzleIcon from '../../../../../assets/icons/dock/2048.png';
+import PuzzleIcon from '../../../../../assets/icons/games/2048.png';
 import Board from './components/Board';
 import GameProvider from './context/GameContext';
-import { Alert, Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 const Wrapper = styled.div`
 	display: flex;

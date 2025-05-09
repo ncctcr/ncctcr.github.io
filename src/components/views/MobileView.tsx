@@ -8,8 +8,8 @@ import ExperienceIcon from '../../assets/icons/dock/experience.png';
 import EducatitonIcon from '../../assets/icons/dock/education.png';
 import LicenceIcon from '../../assets/icons/dock/licence.png';
 import ContactIcon from '../../assets/icons/dock/contact.png';
-import PuzzleIcon from '../../assets/icons/dock/2048.png';
-import BlackjackIcon from '../../assets/icons/dock/blackjack.png';
+import PuzzleIcon from '../../assets/icons/games/2048.png';
+import BlackjackIcon from '../../assets/icons/games/blackjack.png';
 import AboutMeIcon from '../../assets/icons/dock/about-me.png';
 import SkillsContent from '../contents/skills-content/SkillsContent';
 import SelectedView from './SelectedView';
@@ -17,8 +17,8 @@ import ExperienceContent from '../contents/experience-content/ExperienceContent'
 import EducationContent from '../contents/EducationContent';
 import LicensesContent from '../contents/LicensesContent';
 import ContactsContent from '../contents/ContactsContent';
-import Puzzle from '../contents/games-content/components/2048/Puzzle';
-import Blackjack from '../contents/games-content/components/blackjack/Blackjack';
+import Puzzle from '../contents/games-content/games/2048/Puzzle';
+import Blackjack from '../contents/games-content/games/blackjack/Blackjack';
 import AboutMeContent from '../contents/AboutMeContent';
 import UnitedWidget from '../widgets/components/UnitedWidget';
 

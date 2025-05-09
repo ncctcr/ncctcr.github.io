@@ -1,11 +1,15 @@
 import { useWindows } from '../../../contexts/WindowContext';
-import PuzzleIcon from '../../../assets/icons/dock/2048.png';
-import Puzzle from './components/2048/Puzzle';
-import BlackjackIcon from '../../../assets/icons/dock/blackjack.png';
-import Blackjack from './components/blackjack/Blackjack';
+import PuzzleIcon from '../../../assets/icons/games/2048.png';
+import Puzzle from './games/2048/Puzzle';
+import BlackjackIcon from '../../../assets/icons/games/blackjack.png';
+import DoomIcon from '../../../assets/icons/games/doom.png';
+import DiggerIcon from '../../../assets/icons/games/digger.png';
+import Blackjack from './games/blackjack/Blackjack';
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import styled from 'styled-components';
+import Doom from './games/doom/Doom';
+import Digger from './games/digger/Digger';
 
 const Game = styled(Box)`
   display: flex;
@@ -13,9 +17,10 @@ const Game = styled(Box)`
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   img {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     border-radius: 15px;
   }
 `
@@ -55,13 +60,31 @@ const GAMES = [
       }
     }
   },
+  {
+    name: 'DOOM',
+    key: 'doom',
+    icon: DoomIcon,
+    content: <Doom />,
+    settings: {
+      width: 900,
+    }
+  },
+  {
+    name: 'Digger 1983',
+    key: 'digger',
+    icon: DiggerIcon,
+    content: <Digger />,
+    settings: {
+      width: 900,
+    }
+  },
 ]
 
 const GamesContent = () => {
   const {state, createWindow, bringToFrontByKey} = useWindows();
 
   const handleOpen = (data: any) => {
-    if (state.windows.some((i) => i.key === data.name)) {
+    if (state.windows.some((i) => i.key === data.key)) {
       bringToFrontByKey(data.name);
     } else {
       createWindow({
@@ -82,7 +105,7 @@ const GamesContent = () => {
       {GAMES.map((i) => (
         <Game key={i.key} onClick={() => handleOpen(i)}>
           <img src={i.icon} alt={i.name} />
-          <Typography fontSize={14}>{i.name}</Typography>
+          <Typography fontSize={12}>{i.name}</Typography>
         </Game>
       ))}
     </Box>
