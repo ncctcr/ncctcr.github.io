@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.519bf4ba.css",
-    "main.js": "/static/js/main.cac95e0c.js",
+    "main.js": "/static/js/main.7a3f5f60.js",
     "static/js/453.ad631ce7.chunk.js": "/static/js/453.ad631ce7.chunk.js",
     "static/media/sequoia-sunrise.png": "/static/media/sequoia-sunrise.c260bad6ee67dfaff1f9.png",
     "static/media/sonoma-horizon.png": "/static/media/sonoma-horizon.7da3b09dd9555365f7a6.png",
@@ -13,8 +13,11 @@
     "static/media/avatar.png": "/static/media/avatar.5801ae0a00c2ef1b39a7.png",
     "static/media/pro-black.png": "/static/media/pro-black.b89e249f9832830ffcc2.png",
     "static/media/ventura.jpg": "/static/media/ventura.dded75926acbce29d6e0.jpg",
+    "static/media/pop.png": "/static/media/pop.181fd5fbbb99132dbd47.png",
     "static/media/react.png": "/static/media/react.8a6fc0a24a800d1e0f4a.png",
+    "static/media/duke3d.png": "/static/media/duke3d.36d2d094aeb32213514d.png",
     "static/media/doom.png": "/static/media/doom.fa7d69f804174687a4b9.png",
+    "static/media/arena.png": "/static/media/arena.fafe57e7d7ef394942e6.png",
     "static/media/blackjack.png": "/static/media/blackjack.c440e9e2685ff482ca05.png",
     "static/media/skills.png": "/static/media/skills.94109eaa62b7880cd5c4.png",
     "static/media/education.png": "/static/media/education.5ce435c58955fa6a1baa.png",
@@ -23,6 +26,7 @@
     "static/media/licence.png": "/static/media/licence.7eed57b06a27b3ec295c.png",
     "static/media/experience.png": "/static/media/experience.273bb7257850f3cbbdeb.png",
     "static/media/learning-typescript.png": "/static/media/learning-typescript.0898ad94aafaf8362e31.png",
+    "static/media/quake.png": "/static/media/quake.7d8a02ed0b598826a4bc.png",
     "static/media/settings.png": "/static/media/settings.48c8a8ff1163594511dc.png",
     "static/media/10.png": "/static/media/10.66d42d19d976bd0df99c.png",
     "static/media/2048.png": "/static/media/2048.02133015a722ce520557.png",
@@ -47,11 +51,11 @@
     "static/media/hide.svg": "/static/media/hide.031ae33fb154ac7b17135946955b9d84.svg",
     "static/media/resize.svg": "/static/media/resize.336c41f63adfa4399a297f91a130001b.svg",
     "main.519bf4ba.css.map": "/static/css/main.519bf4ba.css.map",
-    "main.cac95e0c.js.map": "/static/js/main.cac95e0c.js.map",
+    "main.7a3f5f60.js.map": "/static/js/main.7a3f5f60.js.map",
     "453.ad631ce7.chunk.js.map": "/static/js/453.ad631ce7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.519bf4ba.css",
-    "static/js/main.cac95e0c.js"
+    "static/js/main.7a3f5f60.js"
   ]
 }
