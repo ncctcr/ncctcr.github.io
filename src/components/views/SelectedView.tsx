@@ -20,7 +20,7 @@ const Wrapper = styled.div<{ $clickX: number; $clickY: number; $isOpen: boolean 
 	@keyframes scaleUp {
 		from {
 			transform: scale(0);
-			border-radius: 50%;
+			border-radius: 80px;
 			opacity: 0;
 		}
 		to {
@@ -38,7 +38,7 @@ const Wrapper = styled.div<{ $clickX: number; $clickY: number; $isOpen: boolean 
 		}
 		to {
 			transform: scale(0);
-			border-radius: 50%;
+			border-radius: 80px;
 			opacity: 0;
 		}
 	}
@@ -88,7 +88,6 @@ const SelectedView: FC<TypeProps> = ({ title, onBack, children, styles, clickPos
     setTimeout(onBack, 300);
   };
 
-  console.log('isOpen', isOpen);
   return (
     <Wrapper
       style={styles?.body}
