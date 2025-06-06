@@ -26,6 +26,8 @@ const Icon = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 15px;
+  background: #2e2e2e;
+  aspect-ratio: 1 / 1;
 `
 
 const Application = (props: {name: string, icon: string}) => {
