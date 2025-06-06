@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -14,14 +13,14 @@ const Wrapper = styled.div`
 	overflow: hidden;
   color: #d4d4d4;
   aspect-ratio: 1 / 1;
+  font-size: 0.6rem;
 `;
 
 const CalendarHeader = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-  margin-bottom: 6px;
-  margin-left: 6px;
+  margin-left: 5px;
 `;
 
 const MonthNav = styled.div`
@@ -31,7 +30,6 @@ const MonthNav = styled.div`
 
 const MonthTitle = styled.h2`
 	margin: 0;
-	font-size: 10px;
 	font-weight: 600;
   text-transform: uppercase;
   color: #fc4134;
@@ -40,19 +38,17 @@ const MonthTitle = styled.h2`
 const DayLabels = styled.div`
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	margin-bottom: 4px;
   font-weight: bold;
 `;
 
 const DayLabel = styled.div`
 	text-align: center;
-	font-size: 10px;
 `;
 
 const DaysGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	grid-template-rows: repeat(6, 19px);
+	grid-template-rows: repeat(6, 15%);
 	flex-grow: 1;
 `;
 
@@ -65,21 +61,17 @@ interface DayCellProps {
 
 const DayCell = styled.div<DayCellProps>`
   text-align: center;
-  font-size: 10px;
-  padding: 4px 0;
   cursor: default;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1px;
 	color: ${props =>
-    props.isToday ? 'white' :
-      props.isWeekend ? '#fe453a' :
-          props.isCurrentMonth ? '#d4d4d4' : '#999'};
+    props.isToday ? '#FFFFFF' : props.isWeekend ? '#999' : props.isCurrentMonth ? '#FFFFFF' : '#606060'};
   background-color: ${props => props.isToday ? '#fe453a' : 'transparent'};
-  color: ${props => props.isToday ? 'white' : '#d4d4d4'};
   font-weight: bold;
+  aspect-ratio: 1 / 1;
+  line-height: 0;
 `;
 
 const weekdays: string[] = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
