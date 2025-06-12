@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import CalendarWidget from './components/CalendarWidget';
-import TimeWidget from './components/TimeWidget';
 import VideoWidget from './components/VideoWidget';
 import { Box, Grid } from '@mui/material';
 import ContactsWidget from './components/ContactsWidget';
 import UnitedWidget from './components/UnitedWidget';
+import AnalogTimeWidget from './components/analog-time-widget/AnalogTimeWidget';
 
 const Wrapper = styled.div`
 	font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
@@ -14,9 +14,8 @@ const Wrapper = styled.div`
 	width: 100%;
 `;
 
-
 const WIDGETS = [
-  {size: 6, widget: <TimeWidget />},
+  {size: 6, widget: <AnalogTimeWidget />},
   {size: 6, widget: <CalendarWidget />},
   {size: 12, widget: <VideoWidget />},
   {size: 12, widget: <ContactsWidget />},

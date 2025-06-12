@@ -3,7 +3,7 @@ import { TypeWindow, WindowsState } from '../interfaces';
 import StickerContent from '../components/contents/StickerContent';
 
 const INIT_STATE = {
-  highestZIndex: 1,
+  highestZIndex: 10,
   windows: [
     {
       id: Date.now(),

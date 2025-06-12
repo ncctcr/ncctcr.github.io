@@ -14,6 +14,9 @@ const Wrapper = styled.div`
   color: #d4d4d4;
   aspect-ratio: 1 / 1;
   font-size: 0.6rem;
+  @media (max-width: 600px) {
+    background: #1a1a1a;
+  }
 `;
 
 const CalendarHeader = styled.div`
@@ -38,7 +41,11 @@ const MonthTitle = styled.h2`
 const DayLabels = styled.div`
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-  font-weight: bold;
+	font-weight: bold;
+	color: #ededed;
+	> *:nth-last-child(-n + 2) {
+		color: #999;
+	}
 `;
 
 const DayLabel = styled.div`
@@ -67,7 +74,7 @@ const DayCell = styled.div<DayCellProps>`
   align-items: center;
   justify-content: center;
 	color: ${props =>
-    props.isToday ? '#FFFFFF' : props.isWeekend ? '#999' : props.isCurrentMonth ? '#FFFFFF' : '#606060'};
+    props.isToday ? '#FFFFFF' : props.isWeekend ? '#999' : props.isCurrentMonth ? '#ededed' : '#606060'};
   background-color: ${props => props.isToday ? '#fe453a' : 'transparent'};
   font-weight: bold;
   aspect-ratio: 1 / 1;

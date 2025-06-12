@@ -16,6 +16,7 @@ const Wrapper = styled.div<{ $clickX: number; $clickY: number; $isOpen: boolean 
 	left: 0;
 	transform-origin: ${props => props.$clickX}px ${props => props.$clickY}px;
 	animation: ${props => props.$isOpen ? 'scaleUp' : 'scaleDown'} 0.3s ease forwards;
+  z-index: 10;
 
 	@keyframes scaleUp {
 		from {

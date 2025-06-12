@@ -1,7 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import CalendarWidget from '../widgets/components/CalendarWidget';
-import TimeWidget from '../widgets/components/TimeWidget';
 import SkillIcon from '../../assets/icons/dock/skills.png';
 import styled from 'styled-components';
 import ExperienceIcon from '../../assets/icons/dock/experience.png';
@@ -21,6 +20,7 @@ import Puzzle from '../contents/games-content/games/2048/Puzzle';
 import Blackjack from '../contents/games-content/games/blackjack/Blackjack';
 import AboutMeContent from '../contents/AboutMeContent';
 import UnitedWidget from '../widgets/components/UnitedWidget';
+import AnalogTimeWidget from '../widgets/components/analog-time-widget/AnalogTimeWidget';
 
 const Icon = styled.img`
   width: 100%;
@@ -54,7 +54,7 @@ const MainView = (props: {onClick: (view: number, event: React.MouseEvent) => vo
   <Box padding={3}>
     <Grid container spacing={SPACING}>
       <Grid size={6}>
-        <TimeWidget />
+        <AnalogTimeWidget />
       </Grid>
       <Grid size={6}>
         <Grid container spacing={SPACING}>
