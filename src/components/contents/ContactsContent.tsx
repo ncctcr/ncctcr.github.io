@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Description from '../shared/Description';
 import ContactIcon from '../../assets/icons/dock/contact.png';
 import { Box, Grid, Link } from '@mui/material';
@@ -8,13 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import InstagramIcon from '@mui/icons-material/Instagram';
-
-const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	padding: 20px;
-`
+import Wrapper from '../shared/Wrapper';
 
 const ContactsContent = () => {
   return (

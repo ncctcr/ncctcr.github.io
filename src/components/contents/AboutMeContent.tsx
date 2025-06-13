@@ -2,15 +2,7 @@ import React, { Fragment } from 'react';
 import { Avatar, Box, Grid, Rating, Typography } from '@mui/material';
 import AvatarImg from '../../assets/images/avatar.jpg'
 import Block from '../shared/Block';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-  align-items: center;
-	gap: 30px;
-	padding: 20px;
-`
+import Wrapper from '../shared/Wrapper';
 
 const FONT_SIZE = 14;
 

@@ -9,13 +9,7 @@ import { shortenText } from '../../functions';
 import { Box, IconButton, useMediaQuery, useTheme } from '@mui/material';
 import { useWindows } from '../../contexts/WindowContext';
 import ClearIcon from '@mui/icons-material/Clear';
-
-const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	padding: 20px;
-`
+import Wrapper from '../shared/Wrapper';
 
 const Item = styled.div`
   display: flex;

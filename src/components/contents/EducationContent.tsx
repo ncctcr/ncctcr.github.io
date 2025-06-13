@@ -1,16 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Block from '../shared/Block';
 import { Box, Grid, Typography } from '@mui/material';
 import Description from '../shared/Description';
 import EducationIcon from '../../assets/icons/dock/education.png';
-
-const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	padding: 20px;
-`
+import Wrapper from '../shared/Wrapper';
 
 const Row = (props: {name: string, value: string}) => {
   return (

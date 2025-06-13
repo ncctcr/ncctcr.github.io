@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import Description from '../../../shared/Description';
 import { Box, Typography } from '@mui/material';
 import Block from '../../../shared/Block';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 20px;
-`
+import Wrapper from '../../../shared/Wrapper';
 
 const Meme = styled.img`
   width: 100%;

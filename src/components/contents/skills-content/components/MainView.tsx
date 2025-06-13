@@ -13,14 +13,7 @@ import AxiosIcon from '../../../../assets/icons/axios.png';
 import ChartJsIcon from '../../../../assets/icons/chartjs.png';
 import I18nIcon from '../../../../assets/icons/i18n.png';
 import GitIcon from '../../../../assets/icons/git.png';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 20px;
-`
+import Wrapper from '../../../shared/Wrapper';
 
 type TypeProps = {
   onClick?: (view: string) => void;

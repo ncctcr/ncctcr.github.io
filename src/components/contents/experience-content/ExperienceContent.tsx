@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import Description from '../../shared/Description';
 import ExperienceIcon from '../../../assets/icons/dock/experience.png';
 import Company from '../../shared/Company';
@@ -7,13 +6,7 @@ import MultiSelect from '../../shared/MultiSelect';
 import { TECHNOLOGIES } from '../../../constants';
 import { Grid } from '@mui/material';
 import { COMPANIES } from './constants';
-
-const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-	padding: 20px;
-`
+import Wrapper from '../../shared/Wrapper';
 
 const getSkills = (skills: string[]) => {
   return TECHNOLOGIES.filter((i) => skills.includes(i.key))
