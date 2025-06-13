@@ -1,10 +1,12 @@
 import React, { CSSProperties, FC, ReactNode } from 'react';
 import styled from 'styled-components';
+import { useMediaQuery, useTheme } from '@mui/material';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ isMobile: boolean }>`
   display: flex;
   width: 100%;
-  border: 1px solid rgba(113, 113, 113, 0.44);
+  border: ${({ isMobile }) => isMobile ? 'unset' : '1px solid rgba(113, 113, 113, 0.44)'};
+  background: ${({ isMobile }) => isMobile ? '#1c1c1e' : 'unset'};
   border-radius: 8px;
   padding: 10px;
   gap: 10px;
@@ -54,8 +56,11 @@ const Description: FC<TypeProps> = ({
   backgroundIcon = false,
   styles
 }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
+
   return (
-    <Wrapper style={styles?.wrapper}>
+    <Wrapper style={styles?.wrapper} isMobile={isMobile}>
       {icon && <img src={icon} alt={`${icon} icon`} style={backgroundIcon ? {background: '#000'} : {}}/>}
       <Content style={styles?.content}>
         <Title style={styles?.title}><span>{title}</span></Title>

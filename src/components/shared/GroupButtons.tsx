@@ -1,10 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
-const Wrapper = styled.div`
-  
-`
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const Title = styled.div`
   font-size: 14px;
@@ -59,10 +56,13 @@ type TypeProps = {
 }
 
 const GroupButtons: FC<TypeProps> = ({ title, links, onClick }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
+
   return (
-    <Wrapper>
+    <div>
       {title && <Title>{title}</Title>}
-      <List>
+      <List style={isMobile ? {background: '#1c1c1e', border: 'unset'} : {}}>
         {links.map((i, index) => (
           <Item key={index} onClick={() => onClick && onClick(i.key)}>
             <div className={'group'}>
@@ -80,7 +80,7 @@ const GroupButtons: FC<TypeProps> = ({ title, links, onClick }) => {
           </Item>
         ))}
       </List>
-    </Wrapper>
+    </div>
   );
 };
 

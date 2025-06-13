@@ -4,10 +4,10 @@ import { IconButton } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 
 const Wrapper = styled.div<{ $clickX: number; $clickY: number; $isOpen: boolean }>`
-  display: flex;
-  flex-direction: column;
-	color: #dddddd;
-	background: #1e1e1e;
+	display: flex;
+	flex-direction: column;
+	color: #ffffff;
+	background: #000000;
 	height: 100dvh;
 	width: 100dvw;
 	overflow: hidden;
@@ -16,18 +16,16 @@ const Wrapper = styled.div<{ $clickX: number; $clickY: number; $isOpen: boolean 
 	left: 0;
 	transform-origin: ${props => props.$clickX}px ${props => props.$clickY}px;
 	animation: ${props => props.$isOpen ? 'scaleUp' : 'scaleDown'} 0.3s ease forwards;
-  z-index: 10;
+	z-index: 10;
 
 	@keyframes scaleUp {
 		from {
 			transform: scale(0);
 			border-radius: 80px;
-			opacity: 0;
 		}
 		to {
 			transform: scale(1);
 			border-radius: 0;
-			opacity: 1;
 		}
 	}
 
@@ -35,12 +33,10 @@ const Wrapper = styled.div<{ $clickX: number; $clickY: number; $isOpen: boolean 
 		from {
 			transform: scale(1);
 			border-radius: 0;
-			opacity: 1;
 		}
 		to {
 			transform: scale(0);
 			border-radius: 80px;
-			opacity: 0;
 		}
 	}
 `

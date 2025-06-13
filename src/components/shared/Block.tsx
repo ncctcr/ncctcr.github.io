@@ -1,9 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  
-`
+import { useMediaQuery, useTheme } from '@mui/material';
 
 const Title = styled.div`
   font-size: 14px;
@@ -28,13 +25,16 @@ type TypeProps = {
 }
 
 const Block: FC<TypeProps> = ({ title, brackets, children }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // < 600px
+
   return (
-    <Wrapper>
+    <div>
       {title && <Title>{title}{brackets && <Brackets>({brackets})</Brackets>}</Title>}
-      <Content>
+      <Content style={isMobile ? {background: '#1c1c1e', border: 'unset'} : {}}>
         {children}
       </Content>
-    </Wrapper>
+    </div>
   );
 };
 

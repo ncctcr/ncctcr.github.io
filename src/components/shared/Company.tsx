@@ -100,8 +100,9 @@ const Company: FC<TypeProps> = ({
         <>
           <Divider/>
           <Box padding={1}>
-            {skills.map((skill) => (
+            {skills.map((skill, index) => (
               <Chip
+                key={index}
                 label={skill.name}
                 variant={filters && filters.skills.includes(skill.key) ? 'filled' : 'outlined'}
                 sx={{mr: 0.5, mb: 0.5}}
