@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.519bf4ba.css",
-    "main.js": "/static/js/main.ef57983b.js",
+    "main.js": "/static/js/main.44ac4513.js",
     "static/js/453.ad631ce7.chunk.js": "/static/js/453.ad631ce7.chunk.js",
     "static/media/sequoia-sunrise.png": "/static/media/sequoia-sunrise.c260bad6ee67dfaff1f9.png",
     "static/media/sonoma-horizon.png": "/static/media/sonoma-horizon.7da3b09dd9555365f7a6.png",
@@ -10,7 +10,6 @@
     "static/media/covid-challenge-hackathon.png": "/static/media/covid-challenge-hackathon.c26fa5d265195efe6016.png",
     "static/media/united24.png": "/static/media/united24.3f862dc20f8398855bd6.png",
     "static/media/about-me.png": "/static/media/about-me.f98df581f6d63645c1be.png",
-    "static/media/avatar.png": "/static/media/avatar.5801ae0a00c2ef1b39a7.png",
     "static/media/pro-black.png": "/static/media/pro-black.b89e249f9832830ffcc2.png",
     "static/media/ventura.jpg": "/static/media/ventura.dded75926acbce29d6e0.jpg",
     "static/media/pop.png": "/static/media/pop.181fd5fbbb99132dbd47.png",
@@ -36,6 +35,7 @@
     "static/media/5.png": "/static/media/5.cf8c05a24e74537715d9.png",
     "static/media/wallpaper.png": "/static/media/wallpaper.0d433fc3d216e408d5d9.png",
     "static/media/chartjs.png": "/static/media/chartjs.4a930fbc8ffc21fbeb8c.png",
+    "static/media/avatar.jpg": "/static/media/avatar.39826b28eb969cba0385.jpg",
     "static/media/games.png": "/static/media/games.cd0d0a9a0504566976e5.png",
     "static/media/digger.png": "/static/media/digger.597e6078e25849dc95a9.png",
     "static/media/axios.png": "/static/media/axios.7c5e0cbd3a9f055b4c08.png",
@@ -51,11 +51,11 @@
     "static/media/hide.svg": "/static/media/hide.031ae33fb154ac7b17135946955b9d84.svg",
     "static/media/resize.svg": "/static/media/resize.336c41f63adfa4399a297f91a130001b.svg",
     "main.519bf4ba.css.map": "/static/css/main.519bf4ba.css.map",
-    "main.ef57983b.js.map": "/static/js/main.ef57983b.js.map",
+    "main.44ac4513.js.map": "/static/js/main.44ac4513.js.map",
     "453.ad631ce7.chunk.js.map": "/static/js/453.ad631ce7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.519bf4ba.css",
-    "static/js/main.ef57983b.js"
+    "static/js/main.44ac4513.js"
   ]
 }
